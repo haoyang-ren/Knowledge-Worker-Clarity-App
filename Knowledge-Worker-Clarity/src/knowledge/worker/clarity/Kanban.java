@@ -1,3 +1,4 @@
+package knowledge.worker.clarity;
 
 import java.time.LocalDate;
 
@@ -66,8 +67,6 @@ public class Kanban {
         this.category = category;
     }
 
-    
-    
     
 }
 
