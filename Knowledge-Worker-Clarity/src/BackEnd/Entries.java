@@ -1,4 +1,4 @@
-package knowledge.worker.clarity;
+package BackEnd;
 
 import java.time.LocalDate;
 
@@ -12,14 +12,14 @@ import java.time.LocalDate;
  *
  * @author ryan
  */
-public class Kanban {
+public class Entries {
     private LocalDate start;
     private LocalDate end;
     private double duration;
     private String description;
     private String category;
 
-    public Kanban(LocalDate start, LocalDate end, double duration, String description, String category) {
+    public Entries(LocalDate start, LocalDate end, double duration, String description, String category) {
         this.start = start;
         this.end = end;
         this.duration = duration;
