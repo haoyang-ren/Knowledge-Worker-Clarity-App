@@ -52,6 +52,10 @@ public class EntriesController {
     @FXML
     private Button confirm;
     
+    Database d = new Database();
+    //TODO: Instatiate the PageSwitchHelper class
+    PageSwitcher pageSwitcher = new PageSwitcher();
+    
     @FXML
     private void handleLoginButtonAction(ActionEvent event) {
         
