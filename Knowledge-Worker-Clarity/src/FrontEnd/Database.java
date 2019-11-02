@@ -25,7 +25,6 @@ public class Database {
  
     public static void main(String[] args) throws ClassNotFoundException, SQLException{
 		connect();
-		insertPets();
 		printAllPets();	
 		getPets("Cat");
 		getPets("Frog");

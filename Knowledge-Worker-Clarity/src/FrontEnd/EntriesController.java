@@ -49,7 +49,7 @@ public class EntriesController {
     @FXML
     private Button confirm;
 
-    Database d = new Database();
+    //Database d = new Database();
     //TODO: Instatiate the PageSwitchHelper class
     PageSwitcher pageSwitcher = new PageSwitcher();
 
