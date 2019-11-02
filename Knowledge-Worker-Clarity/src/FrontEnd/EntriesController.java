@@ -54,40 +54,20 @@ public class EntriesController {
     PageSwitcher pageSwitcher = new PageSwitcher();
 
     @FXML
-    private void handleLoginButtonAction(ActionEvent event) {
-        /*String userString = username.getText();
-        String passString = password.getText();
-        String getResult = "SELECT * FROM USER "
-                + "WHERE username = '" + userString + "' "
-                + "AND password = '" + passString + "';";
+    private void handleButtonAction(ActionEvent event) {
 
+        String startText = this.getStartTime().getText();
+        String endText = this.getEndTime().getText();
+        String descriptionText = this.getDescription().getText();
+        String taskTitleText = this.getTaskTitle().getText();
+        String taskDescriptionText = this.getTaskDescription().getText();
+        String doDateText = this.getDoDate().getText();
+        String dueDateText = this.getDueDate().getText();
+        String priorityText = this.getPriority().getText();
+        String selectedCategory = this.getCategory().getAccessibleText();
+         
         try {
-            ResultSet rs = d.getResultSet(getResult); //TODO: Fill in this query
-            if (!rs.next()) {
-                //TODO: What should happen if there is no result?
-                System.out.println("Login Failed!");
-            } else {
-                //TODO: What should happen if there is a result?
-                System.out.println("Login Success!");
-                psh.switcher(event, "MusicList.fxml");
-            }
-            rs.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }*/
 
-        String startText = startTime.getText();
-        String endText = endTime.getText();
-        String descriptionText = description.getText();
-        String taskTitleText = taskTitle.getText();
-        String taskDescriptionText = taskDescription.getText();
-        String doDateText = doDate.getText();
-        String dueDateText = dueDate.getText();
-        String priorityText = priority.getText();
-        String selectedCategory = category.getAccessibleText();
-
-        try {
-            
             pageSwitcher.switcher(event, "Entries.fxml");
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -99,6 +79,102 @@ public class EntriesController {
     public void initialize() {
         //TODO: What should the screen look like when it loads?
 
+    }
+
+    public TextField getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(TextField startTime) {
+        this.startTime = startTime;
+    }
+
+    public TextField getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(TextField endTime) {
+        this.endTime = endTime;
+    }
+
+    public TextField getDescription() {
+        return description;
+    }
+
+    public void setDescription(TextField description) {
+        this.description = description;
+    }
+
+    public TextField getTaskTitle() {
+        return taskTitle;
+    }
+
+    public void setTaskTitle(TextField taskTitle) {
+        this.taskTitle = taskTitle;
+    }
+
+    public TextField getTaskDescription() {
+        return taskDescription;
+    }
+
+    public void setTaskDescription(TextField taskDescription) {
+        this.taskDescription = taskDescription;
+    }
+
+    public TextField getDoDate() {
+        return doDate;
+    }
+
+    public void setDoDate(TextField doDate) {
+        this.doDate = doDate;
+    }
+
+    public TextField getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(TextField dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public ComboBox<?> getCategory() {
+        return category;
+    }
+
+    public void setCategory(ComboBox<?> category) {
+        this.category = category;
+    }
+
+    public TextField getPriority() {
+        return priority;
+    }
+
+    public void setPriority(TextField priority) {
+        this.priority = priority;
+    }
+
+    public Button getConfirm() {
+        return confirm;
+    }
+
+    public void setConfirm(Button confirm) {
+        this.confirm = confirm;
+    }
+
+    public Database getD() {
+        return d;
+    }
+
+    public void setD(Database d) {
+        this.d = d;
+    }
+
+    public PageSwitcher getPageSwitcher() {
+        return pageSwitcher;
+    }
+
+    public void setPageSwitcher(PageSwitcher pageSwitcher) {
+        this.pageSwitcher = pageSwitcher;
     }
 
 }
