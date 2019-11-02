@@ -54,18 +54,18 @@ public class EntriesController {
     PageSwitcher pageSwitcher = new PageSwitcher();
 
     @FXML
-    private void handleLoginButtonAction(ActionEvent event) {
+    private void handleButtonAction(ActionEvent event) {
 
-        /*String startText = startTime.getText();
-        String endText = endTime.getText();
-        String descriptionText = description.getText();
-        String taskTitleText = taskTitle.getText();
-        String taskDescriptionText = taskDescription.getText();
-        String doDateText = doDate.getText();
-        String dueDateText = dueDate.getText();
-        String priorityText = priority.getText();
-        String selectedCategory = category.getAccessibleText();
-         */
+        String startText = this.getStartTime().getText();
+        String endText = this.getEndTime().getText();
+        String descriptionText = this.getDescription().getText();
+        String taskTitleText = this.getTaskTitle().getText();
+        String taskDescriptionText = this.getTaskDescription().getText();
+        String doDateText = this.getDoDate().getText();
+        String dueDateText = this.getDueDate().getText();
+        String priorityText = this.getPriority().getText();
+        String selectedCategory = this.getCategory().getAccessibleText();
+         
         try {
 
             pageSwitcher.switcher(event, "Entries.fxml");
