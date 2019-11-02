@@ -49,7 +49,12 @@ public class KanbanBoardController {
 
     @FXML
     private void handleNextButton(ActionEvent event) {
+        /*try {
 
+            pageSwitcher.switcher(event, "DeepFocusScreen.fxml");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }*/
     }
 
     @FXML
