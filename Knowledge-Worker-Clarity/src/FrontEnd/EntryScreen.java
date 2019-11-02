@@ -21,7 +21,7 @@ public class EntryScreen extends Application { //TODO: What class do you need to
     
     @Override
     public void start(Stage stage) throws Exception {
-        //loadDatabase();
+        loadDatabase();
         //System.out.println("Starting now!");
         Parent root = FXMLLoader.load(getClass().getResource("Entries.fxml"));
         

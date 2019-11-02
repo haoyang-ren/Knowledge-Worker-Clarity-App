@@ -56,16 +56,16 @@ public class EntriesController {
     @FXML
     private void handleButtonAction(ActionEvent event) {
 
-        String startText = this.getStartTime().getText();
-        String endText = this.getEndTime().getText();
-        String descriptionText = this.getDescription().getText();
-        String taskTitleText = this.getTaskTitle().getText();
-        String taskDescriptionText = this.getTaskDescription().getText();
-        String doDateText = this.getDoDate().getText();
-        String dueDateText = this.getDueDate().getText();
-        String priorityText = this.getPriority().getText();
-        String selectedCategory = this.getCategory().getAccessibleText();
-         
+        String startText = this.getStartTime();
+        String endText = this.getEndTime();
+        String descriptionText = this.getDescription();
+        String taskTitleText = this.getTaskTitle();
+        String taskDescriptionText = this.getTaskDescription();
+        String doDateText = this.getDoDate();
+        String dueDateText = this.getDueDate();
+        String priorityText = this.getPriority();
+        String selectedCategory = this.getCategory();
+
         try {
 
             pageSwitcher.switcher(event, "Entries.fxml");
@@ -81,72 +81,72 @@ public class EntriesController {
 
     }
 
-    public TextField getStartTime() {
-        return startTime;
+    public String getStartTime() {
+        return startTime.getText();
     }
 
     public void setStartTime(TextField startTime) {
         this.startTime = startTime;
     }
 
-    public TextField getEndTime() {
-        return endTime;
+    public String getEndTime() {
+        return endTime.getText();
     }
 
     public void setEndTime(TextField endTime) {
         this.endTime = endTime;
     }
 
-    public TextField getDescription() {
-        return description;
+    public String getDescription() {
+        return description.getText();
     }
 
     public void setDescription(TextField description) {
         this.description = description;
     }
 
-    public TextField getTaskTitle() {
-        return taskTitle;
+    public String getTaskTitle() {
+        return taskTitle.getText();
     }
 
     public void setTaskTitle(TextField taskTitle) {
         this.taskTitle = taskTitle;
     }
 
-    public TextField getTaskDescription() {
-        return taskDescription;
+    public String getTaskDescription() {
+        return taskDescription.getText();
     }
 
     public void setTaskDescription(TextField taskDescription) {
         this.taskDescription = taskDescription;
     }
 
-    public TextField getDoDate() {
-        return doDate;
+    public String getDoDate() {
+        return doDate.getText();
     }
 
     public void setDoDate(TextField doDate) {
         this.doDate = doDate;
     }
 
-    public TextField getDueDate() {
-        return dueDate;
+    public String getDueDate() {
+        return dueDate.getText();
     }
 
     public void setDueDate(TextField dueDate) {
         this.dueDate = dueDate;
     }
 
-    public ComboBox<?> getCategory() {
-        return category;
+    public String getCategory() {
+        return category.getAccessibleText();
     }
 
     public void setCategory(ComboBox<?> category) {
         this.category = category;
     }
 
-    public TextField getPriority() {
-        return priority;
+    public String getPriority() {
+        return priority.getText();
     }
 
     public void setPriority(TextField priority) {
@@ -161,20 +161,5 @@ public class EntriesController {
         this.confirm = confirm;
     }
 
-    public Database getD() {
-        return d;
-    }
-
-    public void setD(Database d) {
-        this.d = d;
-    }
-
-    public PageSwitcher getPageSwitcher() {
-        return pageSwitcher;
-    }
-
-    public void setPageSwitcher(PageSwitcher pageSwitcher) {
-        this.pageSwitcher = pageSwitcher;
-    }
 
 }
