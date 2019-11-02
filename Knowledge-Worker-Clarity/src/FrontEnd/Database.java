@@ -40,10 +40,11 @@ public class Database {
 		//create your table
 		String createStatement = "CREATE TABLE IF NOT EXISTS Entries "
                         + "(ID INTEGER PRIMARY KEY autoincrement, "
-                        + "DURATION  NOT NULL, "
+                        + "STARTTIME DATETIME NOT NULL, "
+                        + "ENDTIME DATETIME NOT NULL,"
+                        + "DURATION DOUBLE NOT NULL, "
                         + "DESCRIPTION TEXT NOT NULL, "
-                        + "CATEGORY TEXT NOT NULL, "
-                        + "OWNER TEXT NOT NULL "
+                        + "CATEGORY TEXT NOT NULL"
                         + ");";
                 
                 st.execute(createStatement);
@@ -64,7 +65,7 @@ public class Database {
                
 		//write the SQL query and the java code to insert all four pets
                 
-                String insertQuery = "INSERT OR IGNORE INTO Pets (ID, NAME, SPECIES, COLOUR, OWNER) "
+                String insertQuery = "INSERT OR IGNORE INTO Pets (ID," + EntriesController.getdescriptionText + "SPECIES, COLOUR, OWNER) "
                            + "VALUES (1, 'KITTY', 'CAT', 'GREY', 'ANDREW'), "
                            + "(2, 'BLAIR', 'CAT', 'WHITE', 'YENNI'), "
                            + "(3, 'MIMI', 'FROG', 'GREEN', 'HATHERINE'), "
