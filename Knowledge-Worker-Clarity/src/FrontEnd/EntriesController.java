@@ -68,7 +68,7 @@ public class EntriesController {
 
         try {
 
-            pageSwitcher.switcher(event, "Entries.fxml");
+            pageSwitcher.switcher(event, "KanbanBoard.fxml");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

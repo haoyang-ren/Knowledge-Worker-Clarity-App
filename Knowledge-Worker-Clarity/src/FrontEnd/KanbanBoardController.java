@@ -35,9 +35,16 @@ public class KanbanBoardController {
     @FXML
     private Button next;
 
+    PageSwitcher pageSwitcher = new PageSwitcher();
+
     @FXML
     private void handlePreviousButton(ActionEvent event) {
+        try {
 
+            pageSwitcher.switcher(event, "Entries.fxml");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     @FXML
