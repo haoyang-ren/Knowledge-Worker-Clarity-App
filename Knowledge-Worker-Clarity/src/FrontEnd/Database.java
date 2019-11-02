@@ -11,6 +11,7 @@ package FrontEnd;
  */
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -32,7 +33,7 @@ public class Database {
 	}
 	public static void connect() throws ClassNotFoundException, SQLException{		
 		//create connection
-                Connection conn = DriverManager.getConnection("jdbc:sqlite:studentDatabase.db");
+                Connection conn = DriverManager.getConnection("jdbc:sqlite:Database.db");
         
 		//create statement
                 Statement st = conn.createStatement();
@@ -66,27 +67,29 @@ public class Database {
 		
 	}
 	
-	public static void insertPets() throws SQLException{
+	public static void insertEntries() throws SQLException{
 		//create connection
-                Connection conn = DriverManager.getConnection("jdbc:sqlite:studentDatabase.db");
+                Connection conn = DriverManager.getConnection("jdbc:sqlite:Database.db");
 		//create statement
-                Statement st  = conn.createStatement();
-               
-		//write the SQL query and the java code to insert all four pets
                 
-                String insertQuery = "INSERT OR IGNORE INTO Pets (ID," + EntriesController.getdescriptionText + "SPECIES, COLOUR, OWNER) "
+                //EntriesController ec = new EntriesController();
+		//write the SQL query and the java code to insert all four pets
+                //String newDescription = ec.getDescription().getText();
+                String myPreparedSt = "INSERT OR IGNORE INTO Entries (" + "SPECIES, COLOUR, OWNER) "
                            + "VALUES (1, 'KITTY', 'CAT', 'GREY', 'ANDREW'), "
                            + "(2, 'BLAIR', 'CAT', 'WHITE', 'YENNI'), "
                            + "(3, 'MIMI', 'FROG', 'GREEN', 'HATHERINE'), "
                            + "(4, 'QUACKYMOOMOO', 'DOG', 'BROWN', 'PHOEBE');";
                 
-                st.execute(insertQuery);
+                PreparedStatement st  = conn.prepareStatement(myPreparedSt);
+                
+                st.execute(myPreparedSt);
 		
 	}
 	
 	public static void printAllPets() throws SQLException{
 		//create connection
-                Connection conn = DriverManager.getConnection("jdbc:sqlite:studentDatabase.db");
+                Connection conn = DriverManager.getConnection("jdbc:sqlite:Database.db");
                 
 		//create statement
                 Statement st = conn.createStatement();
