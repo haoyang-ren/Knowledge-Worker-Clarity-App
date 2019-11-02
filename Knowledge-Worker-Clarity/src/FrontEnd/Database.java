@@ -75,11 +75,8 @@ public class Database {
                 //EntriesController ec = new EntriesController();
 		//write the SQL query and the java code to insert all four pets
                 //String newDescription = ec.getDescription().getText();
-                String myPreparedSt = "INSERT OR IGNORE INTO Entries (" + "SPECIES, COLOUR, OWNER) "
-                           + "VALUES (1, 'KITTY', 'CAT', 'GREY', 'ANDREW'), "
-                           + "(2, 'BLAIR', 'CAT', 'WHITE', 'YENNI'), "
-                           + "(3, 'MIMI', 'FROG', 'GREEN', 'HATHERINE'), "
-                           + "(4, 'QUACKYMOOMOO', 'DOG', 'BROWN', 'PHOEBE');";
+                String myPreparedSt = "INSERT OR IGNORE INTO Entries (STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY)"
+                           + "VALUES (?,?,?,?,?)";
                 
                 PreparedStatement st  = conn.prepareStatement(myPreparedSt);
                 
