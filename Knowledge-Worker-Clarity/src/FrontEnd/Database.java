@@ -39,7 +39,7 @@ public class Database {
                
 		//create your table
 		String createStatement = "CREATE TABLE IF NOT EXISTS Entries "
-                        + "(ID INTEGER PRIMARY KEY autoincrement, "
+                        + "(ID INTEGER PRIMARY KEY AUTO_INCREMENT, "
                         + "STARTTIME DATETIME NOT NULL, "
                         + "ENDTIME DATETIME NOT NULL,"
                         + "DURATION DOUBLE NOT NULL, "
@@ -49,7 +49,16 @@ public class Database {
                 
                 st.execute(createStatement);
                 
+                String createStatement2 = "CREATE TABLE IF NOT EXISTS Tasks "
+                        + "(ID INTEGER PRIMARY KEY AUTO_INCREMENT=100000, "
+                        + "TASKTITLE TEXT NOT NULL, "
+                        + "TASKDESCRIPTION TEXT NOT NULL,"
+                        + "TASKDODATE DATETIME NOT NULL, "
+                        + "TASKDUEDATE DATETIME NOT NULL, "
+                        + "TASKPRIORITY INTEGER NOT NULL"
+                        + ");"; 
 		
+                st.execute(createStatement2);
 		//cleanup code (close statement and connection objects)
         
                  st.close();
