@@ -50,7 +50,7 @@ public class EntriesController {
     @FXML
     private Button confirm;
 
-    //Database d = new Database();
+    Database d = new Database();
     //TODO: Instatiate the PageSwitchHelper class
     PageSwitcher pageSwitcher = new PageSwitcher();
 
@@ -72,17 +72,19 @@ public class EntriesController {
         String startText = this.getStartTime();
         String endText = this.getEndTime();
         String descriptionText = this.getDescription();
+        String selectedCategory = this.getCategory();
         String taskTitleText = this.getTaskTitle();
         String taskDescriptionText = this.getTaskDescription();
         String doDateText = this.getDoDate();
         String dueDateText = this.getDueDate();
         String priorityText = this.getPriority();
-        String selectedCategory = this.getCategory();
-        Entries entry = new Entries(startText, endText, descriptionText, taskTitleText, taskDescriptionText, doDateText, dueDateText, priorityText, selectedCategory);
+        
+        Entries entry = new Entries(startText, endText, descriptionText, selectedCategory);
+        Task task = new Task(taskTitleText, taskDescriptionText, doDateText, dueDateText,priorityText);
 
         //EntriesController ec = new EntriesController(startTime, endTime, description, taskTitle, taskDescription, doDate, dueDate, category, priority);
         
-
+        
         try {
 
             pageSwitcher.switcher(event, "KanbanBoard.fxml");
