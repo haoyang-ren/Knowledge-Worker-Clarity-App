@@ -16,7 +16,7 @@ public class Entries {
     private String description;
     private String category;
 
-    public Entries(String start, String end, String description, String taskTitle, String taskDescription, String doDate, String dueDate, String priority, String category) {
+    public Entries(String start, String end, String description, String category) {
         this.start = start;
         this.end = end;
         this.description = description;
