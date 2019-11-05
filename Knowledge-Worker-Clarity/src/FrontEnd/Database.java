@@ -9,6 +9,7 @@ package FrontEnd;
  *
  * @author ryan
  */
+import BackEnd.Entries;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -66,22 +67,38 @@ public class Database {
 		
 	}
 	
-	public static void insertEntries() throws SQLException{
+	public static void insertEntries(Entries entry) throws SQLException{
 		//create connection
                 Connection conn = DriverManager.getConnection("jdbc:sqlite:Database.db");
 		//create statement
                 
                 //EntriesController ec = new EntriesController();
-		//write the SQL query and the java code to insert all four pets
-                //String newDescription = ec.getDescription().getText();
+	 
+               //String newDescription = ec.getDescription().getText();
                 String myPreparedSt = "INSERT OR IGNORE INTO Entries (STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY)"
                            + "VALUES (?,?,?,?,?)";
                 
                 PreparedStatement st  = conn.prepareStatement(myPreparedSt);
                 
+                st.setString(1, entry.getStart());
+                st.setString(2, entry.getEnd());
+                //add duration
+                st.setString(4, entry.getDescription());
+                st.setString(5, entry.getCategory());
+                
                 st.execute(myPreparedSt);
 		
 	}
+        
+        
+        public static void insertTasks(Task task) throws SQL Exception{
+            
+                Connection conn = DriverManager.getConnection("jdbc:sqlite:Database.db");
+                
+                String myPreparedSt = "INSERT OR IGNORE INTO Tasks (TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY)"
+                                    + "VALUES (?,?,?,?,?)";
+            
+        }
 	
 	public static void printAllPets() throws SQLException{
 		//create connection
