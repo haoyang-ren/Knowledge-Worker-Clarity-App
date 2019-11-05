@@ -5,6 +5,7 @@
  */
 package FrontEnd;
 
+import BackEnd.Entries;
 import java.sql.ResultSet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -49,9 +50,21 @@ public class EntriesController {
     @FXML
     private Button confirm;
 
-    //Database d = new Database();
+    Database d = new Database();
     //TODO: Instatiate the PageSwitchHelper class
     PageSwitcher pageSwitcher = new PageSwitcher();
+
+    public EntriesController(TextField startTime, TextField endTime, TextField description, TextField taskTitle, TextField taskDescription, TextField doDate, TextField dueDate, ComboBox<?> category, TextField priority) {
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.description = description;
+        this.taskTitle = taskTitle;
+        this.taskDescription = taskDescription;
+        this.doDate = doDate;
+        this.dueDate = dueDate;
+        this.category = category;
+        this.priority = priority;
+    }
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -65,6 +78,10 @@ public class EntriesController {
         String dueDateText = this.getDueDate();
         String priorityText = this.getPriority();
         String selectedCategory = this.getCategory();
+        Entries entry = new Entries(startText, endText, descriptionText, taskTitleText, taskDescriptionText, doDateText, dueDateText, priorityText, selectedCategory);
+
+        //EntriesController ec = new EntriesController(startTime, endTime, description, taskTitle, taskDescription, doDate, dueDate, category, priority);
+        
 
         try {
 
@@ -160,6 +177,5 @@ public class EntriesController {
     public void setConfirm(Button confirm) {
         this.confirm = confirm;
     }
-
 
 }
