@@ -10,6 +10,7 @@ package FrontEnd;
  * @author ryan
  */
 import BackEnd.Entries;
+import BackEnd.Task;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -91,13 +92,24 @@ public class Database {
 	}
         
         
-        public static void insertTasks(Task task) throws SQL Exception{
+        public static void insertTasks(Task task) throws SQLException{
             
                 Connection conn = DriverManager.getConnection("jdbc:sqlite:Database.db");
                 
                 String myPreparedSt = "INSERT OR IGNORE INTO Tasks (TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY)"
                                     + "VALUES (?,?,?,?,?)";
-            
+                
+                PreparedStatement st = conn.prepareStatement(myPreparedSt);
+                
+                
+                
+                st.setString(1, task.getTaskTitle());
+                st.setString(2, task.getTaskDescription());
+                st.setString(3, task.getDoDate());
+                st.setString(4, task.getDueDate());
+                st.setString(5, task.getPriority());
+                st.execute(myPreparedSt);
+                
         }
 	
 	public static void printAllPets() throws SQLException{
