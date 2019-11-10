@@ -21,10 +21,9 @@ public class EntryScreen extends Application { //TODO: What class do you need to
     
     @Override
     public void start(Stage stage) throws Exception {
-        loadDatabase();
-        //System.out.println("Starting now!");
-        Parent root = FXMLLoader.load(getClass().getResource("Entries.fxml"));
-        
+        //loadDatabase();
+        Parent root = FXMLLoader.load(getClass().getResource("KanbanBoard.fxml"));
+
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
@@ -38,7 +37,7 @@ public class EntryScreen extends Application { //TODO: What class do you need to
 
     private void loadDatabase() throws SQLException {
        //TODO: Call Database methods here to create the database
-
+            
        
     }
     
