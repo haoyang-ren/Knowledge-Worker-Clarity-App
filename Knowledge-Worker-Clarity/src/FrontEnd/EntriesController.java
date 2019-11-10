@@ -6,6 +6,7 @@
 package FrontEnd;
 
 import BackEnd.Entries;
+import BackEnd.Task;
 import java.sql.ResultSet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
