@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="FrontEnd.DeepFocusScreenController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.DeepFocusScreenController">
    <children>
-      <Label fx:id="DeepFocusLabel" layoutX="231.0" layoutY="38.0" text="Deep Focus screen" />
+      <Label fx:id="DeepFocusLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="246.0" layoutY="33.0" text="Deep Focus">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <Label fx:id="DeepFocusLabel1" alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="82.0" text="Task List">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ChoiceBox id="tasklist" accessibleText="f" layoutX="41.0" layoutY="107.0" prefWidth="150.0">
+         <cursor>
+            <Cursor fx:constant="W_RESIZE" />
+         </cursor>
+      </ChoiceBox>
+      <Label fx:id="DeepFocusLabel11" alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="161.0" text="Task Name">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="DeepFocusLabel111" alignment="CENTER" contentDisplay="CENTER" layoutX="41.0" layoutY="258.0" text="Description">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField id="tasknametext" fx:id="tasknametext" editable="false" layoutX="42.0" layoutY="180.0" prefHeight="72.0" prefWidth="299.0" />
+      <TextField id="taskdesctext" fx:id="taskdesctext" editable="false" layoutX="42.0" layoutY="287.0" prefHeight="72.0" prefWidth="299.0" />
+      <Label fx:id="DeepFocusLabel112" alignment="CENTER" contentDisplay="CENTER" layoutX="431.0" layoutY="82.0" text="Date &amp; Time">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField id="timefield" fx:id="timefield" editable="false" layoutX="383.0" layoutY="101.0" prefHeight="81.0" prefWidth="173.0" />
+      <TextField id="datefield" fx:id="datefield" editable="false" layoutX="383.0" layoutY="200.0" prefHeight="81.0" prefWidth="173.0" />
    </children>
 </AnchorPane>
