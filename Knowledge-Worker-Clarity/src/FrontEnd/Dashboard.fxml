@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.DashboardController">
+   <children>
+      <SplitPane dividerPositions="0.23411371237458195" layoutX="-1.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="KanbanButton" layoutY="106.0" mnemonicParsing="false" onAction="#handleKanbanButtonAction" prefHeight="58.0" prefWidth="163.0" text="Kanban Board" />
+                  <Button fx:id="DeepFocusButton" layoutX="-3.0" layoutY="169.0" mnemonicParsing="false" onAction="#handleDeepFocusButtonAction" prefHeight="58.0" prefWidth="168.0" text="Deep Focus Screen" />
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <BarChart fx:id="DailyChart" layoutX="24.0" layoutY="67.0" legendSide="RIGHT" prefHeight="199.0" prefWidth="283.0" title="Daily Breakdown">
+                    <xAxis>
+                      <CategoryAxis fx:id="CategoryAxis" label="Category" prefHeight="43.0" prefWidth="217.0" side="BOTTOM" tickLabelGap="2.0" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="HoursAxis" autoRanging="false" label="Hours per day" minorTickCount="2" side="LEFT" tickUnit="4.0" upperBound="24.0" />
+                    </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="WeeklyChart" layoutX="236.0" layoutY="229.0" legendSide="LEFT" legendVisible="false" prefHeight="236.0" prefWidth="292.0" title="Weekly Breakdown">
+                    <xAxis>
+                      <CategoryAxis fx:id="CategoryAxis2" label="Category" prefHeight="56.0" prefWidth="212.0" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="HoursAxis2" autoRanging="false" label="Hours per week" minorTickCount="0" side="LEFT" tickUnit="10.0" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
