@@ -8,6 +8,7 @@ package FrontEnd;
 import BackEnd.Entries;
 import BackEnd.Task;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -68,7 +69,7 @@ public class EntriesController {
     }
 
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    private void handleButtonAction(ActionEvent event) throws SQLException {
 
         String startText = this.getStartTime();
         String endText = this.getEndTime();
@@ -84,11 +85,12 @@ public class EntriesController {
         Task task = new Task(taskTitleText, taskDescriptionText, doDateText, dueDateText,priorityText);
 
         //EntriesController ec = new EntriesController(startTime, endTime, description, taskTitle, taskDescription, doDate, dueDate, category, priority);
-        
+        Database.insertEntries(entry);
+        Database.insertTasks(task);
         
         try {
 
-            pageSwitcher.switcher(event, "KanbanBoard.fxml");
+            //pageSwitcher.switcher(event, "KanbanBoard.fxml");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

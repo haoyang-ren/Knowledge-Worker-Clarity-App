@@ -17,7 +17,8 @@
       <Text layoutX="114.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Do Today" />
       <Text layoutX="399.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Do Tomorrow" />
       <Text layoutX="413.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Next 7 days" />
-      <Button fx:id="previous" layoutX="196.0" layoutY="359.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="&lt; Previous" />
-      <Button fx:id="next" layoutX="338.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleNextButton" text="Next &gt;" />
+      <Button fx:id="previous" layoutX="51.0" layoutY="359.0" mnemonicParsing="false" onAction="#handlePreviousButton" text="&lt; Previous" />
+      <Button fx:id="next" layoutX="491.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleNextButton" text="Next &gt;" />
+      <Button fx:id="showTask" layoutX="272.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleShowTaskButton" text="Show" />
    </children>
 </AnchorPane>
