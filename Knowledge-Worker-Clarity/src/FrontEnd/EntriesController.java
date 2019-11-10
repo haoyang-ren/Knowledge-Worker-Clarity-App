@@ -56,7 +56,7 @@ public class EntriesController {
     //TODO: Instatiate the PageSwitchHelper class
     PageSwitcher pageSwitcher = new PageSwitcher();
 
-    public EntriesController(TextField startTime, TextField endTime, TextField description, TextField taskTitle, TextField taskDescription, TextField doDate, TextField dueDate, ComboBox<?> category, TextField priority) {
+    /*public EntriesController(TextField startTime, TextField endTime, TextField description, TextField taskTitle, TextField taskDescription, TextField doDate, TextField dueDate, ComboBox<?> category, TextField priority) {
         this.startTime = startTime;
         this.endTime = endTime;
         this.description = description;
@@ -66,11 +66,11 @@ public class EntriesController {
         this.dueDate = dueDate;
         this.category = category;
         this.priority = priority;
-    }
+    }*/
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws SQLException {
-
+        
         String startText = this.getStartTime();
         String endText = this.getEndTime();
         String descriptionText = this.getDescription();
@@ -81,16 +81,15 @@ public class EntriesController {
         String dueDateText = this.getDueDate();
         String priorityText = this.getPriority();
         
-        Entries entry = new Entries(startText, endText, descriptionText, selectedCategory);
-        Task task = new Task(taskTitleText, taskDescriptionText, doDateText, dueDateText,priorityText);
+        //Entries entry = new Entries(startText, endText, descriptionText, selectedCategory);
+        //Task task = new Task(taskTitleText, taskDescriptionText, doDateText, dueDateText,priorityText);
 
-        //EntriesController ec = new EntriesController(startTime, endTime, description, taskTitle, taskDescription, doDate, dueDate, category, priority);
-        Database.insertEntries(entry);
-        Database.insertTasks(task);
+        //Database.insertEntries(entry);
+        //Database.insertTasks(task);
         
         try {
 
-            //pageSwitcher.switcher(event, "KanbanBoard.fxml");
+            pageSwitcher.switcher(event, "KanbanBoard.fxml");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
