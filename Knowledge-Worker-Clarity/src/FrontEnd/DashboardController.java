@@ -16,6 +16,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -24,6 +25,9 @@ import javafx.event.ActionEvent;
  */
 public class DashboardController implements Initializable {
 
+    
+    @FXML
+    private Label ClarityLabel;
     
     @FXML
     private BarChart<String, Integer> DailyChart;
@@ -46,6 +50,11 @@ public class DashboardController implements Initializable {
     @FXML
     private Button KanbanButton;
     
+    @FXML
+    private Button LogEntryButton;
+    
+    
+    
     PageSwitcher pageSwitcher = new PageSwitcher();
     
     @FXML
@@ -56,6 +65,11 @@ public class DashboardController implements Initializable {
     @FXML
     private void handleDeepFocusButtonAction(ActionEvent event) throws IOException{
         pageSwitcher.switcher(event, "DeepFocusScreen.fxml");
+    }
+    
+    @FXML
+    void handleLogEntryButtonAction(ActionEvent event) throws IOException {
+        pageSwitcher.switcher(event, "Entries.fxml");
     }
     
     

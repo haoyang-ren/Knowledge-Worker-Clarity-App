@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.chart.*?>
 <?import java.lang.*?>
@@ -8,18 +9,39 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="484.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.DashboardController">
+<AnchorPane id="AnchorPane" prefHeight="543.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.DashboardController">
    <children>
       <SplitPane dividerPositions="0.23411371237458195" layoutX="-1.0" layoutY="1.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="KanbanButton" layoutY="106.0" mnemonicParsing="false" onAction="#handleKanbanButtonAction" prefHeight="58.0" prefWidth="163.0" text="Kanban Board" />
-                  <Button fx:id="DeepFocusButton" layoutX="-3.0" layoutY="169.0" mnemonicParsing="false" onAction="#handleDeepFocusButtonAction" prefHeight="58.0" prefWidth="168.0" text="Deep Focus Screen" />
+                  <Button fx:id="KanbanButton" layoutX="-5.0" layoutY="127.0" mnemonicParsing="false" onAction="#handleKanbanButtonAction" prefHeight="78.0" prefWidth="217.0" text="Kanban Board">
+                     <font>
+                        <Font name="System Font" size="18.0" />
+                     </font></Button>
+                  <Button fx:id="DeepFocusButton" layoutX="-3.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleDeepFocusButtonAction" prefHeight="85.0" prefWidth="217.0" text="Deep Focus Screen">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                  <Label fx:id="ClarityLabel" alignment="CENTER" layoutX="4.0" layoutY="20.0" prefHeight="59.0" prefWidth="134.0" text="Clarity">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="53.0" fitWidth="56.0" layoutX="147.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/claritylogo.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="-4.0" layoutY="305.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="217.0" text="Daily Learnings " textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
                </children></AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="541.0" SplitPane.resizableWithParent="false">
                <children>
-                  <BarChart fx:id="DailyChart" layoutX="24.0" layoutY="67.0" legendSide="RIGHT" prefHeight="199.0" prefWidth="283.0" title="Daily Breakdown">
+                  <BarChart fx:id="DailyChart" layoutX="10.0" layoutY="67.0" legendSide="RIGHT" prefHeight="236.0" prefWidth="338.0" title="Daily Breakdown">
                     <xAxis>
                       <CategoryAxis fx:id="CategoryAxis" label="Category" prefHeight="43.0" prefWidth="217.0" side="BOTTOM" tickLabelGap="2.0" />
                     </xAxis>
@@ -27,14 +49,15 @@
                       <NumberAxis fx:id="HoursAxis" autoRanging="false" label="Hours per day" minorTickCount="2" side="LEFT" tickUnit="4.0" upperBound="24.0" />
                     </yAxis>
                   </BarChart>
-                  <BarChart fx:id="WeeklyChart" layoutX="236.0" layoutY="229.0" legendSide="LEFT" legendVisible="false" prefHeight="236.0" prefWidth="292.0" title="Weekly Breakdown">
+                  <BarChart fx:id="WeeklyChart" layoutX="329.0" layoutY="269.0" legendSide="LEFT" legendVisible="false" prefHeight="259.0" prefWidth="336.0" title="Weekly Breakdown">
                     <xAxis>
-                      <CategoryAxis fx:id="CategoryAxis2" label="Category" prefHeight="56.0" prefWidth="212.0" side="BOTTOM" />
+                      <CategoryAxis fx:id="CategoryAxis2" label="Category" prefHeight="48.0" prefWidth="256.0" side="BOTTOM" />
                     </xAxis>
                     <yAxis>
-                      <NumberAxis fx:id="HoursAxis2" autoRanging="false" label="Hours per week" minorTickCount="0" side="LEFT" tickUnit="10.0" />
+                      <NumberAxis fx:id="HoursAxis2" autoRanging="false" label="Hours per week" minorTickCount="0" side="LEFT" tickUnit="20.0" />
                     </yAxis>
                   </BarChart>
+                  <Button fx:id="LogEntryButton" layoutX="476.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleLogEntryButtonAction" text="Log Entry" />
                </children>
             </AnchorPane>
         </items>
