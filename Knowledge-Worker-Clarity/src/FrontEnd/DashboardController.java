@@ -8,6 +8,7 @@ package FrontEnd;
 import com.sun.javafx.charts.Legend;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -104,16 +105,31 @@ public class DashboardController implements Initializable {
        // categoryArrayList.add("Study");
        // categoryArrayList.add("Social");
        // categoryArrayList.add("Relax");
+        try{
+        Database d = new Database();
+        String dailyQuery = "SELECT CATEGORY, DURATION from ENTRIES ORDER BY CATEGORY asc;";
         
-        
-       
        // TODO
-        XYChart.Series series1 = new XYChart.Series();
-        series1.setName("Time Spent");
-        series1.getData().add(new XYChart.Data("Work", 3));
-        series1.getData().add(new XYChart.Data("Reading", 10));
+        XYChart.Series<String, Integer> series1 = new XYChart.Series<>();
         
-        DailyChart.getData().addAll(series1); 
+        
+        ResultSet rs = d.getResultSet(dailyQuery);
+        series1.setName("Time Spent");
+        
+        while (rs.next()){
+            String category = rs.getString(1);
+            int hours = rs.getInt(2);
+            series1.getData().add(new XYChart.Data<>(category, hours));
+        }
+        DailyChart.getData().addAll(series1);
+        }catch (Exception e){
+        }
+        
+       // series1.setName("Time Spent");
+        //series1.getData().add(new XYChart.Data("Work", 3));
+        //series1.getData().add(new XYChart.Data("Reading", 10));
+        
+       // DailyChart.getData().addAll(series1); 
         
         XYChart.Series series2 = new XYChart.Series();
         series2.setName("Time Spent");
@@ -122,6 +138,13 @@ public class DashboardController implements Initializable {
         series2.getData().add(new XYChart.Data("Work", 20));
         
         WeeklyChart.getData().addAll(series2); 
+        
+        
+        
+        
+        
+        
+        
         
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
                 new PieChart.Data("Study", 13),
