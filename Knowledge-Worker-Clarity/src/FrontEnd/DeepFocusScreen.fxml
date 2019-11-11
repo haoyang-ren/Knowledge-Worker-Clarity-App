@@ -40,7 +40,10 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField id="timefield" fx:id="timefield" editable="false" layoutX="383.0" layoutY="101.0" prefHeight="81.0" prefWidth="173.0" />
+      <TextField id="timefield" fx:id="timefield" alignment="CENTER" editable="false" layoutX="383.0" layoutY="101.0" prefHeight="81.0" prefWidth="173.0">
+         <font>
+            <Font name="Arial Bold" size="33.0" />
+         </font></TextField>
       <TextField id="datefield" fx:id="datefield" editable="false" layoutX="383.0" layoutY="200.0" prefHeight="81.0" prefWidth="173.0" />
    </children>
 </AnchorPane>
