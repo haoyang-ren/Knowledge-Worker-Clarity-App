@@ -41,7 +41,7 @@
                </children></AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="541.0" SplitPane.resizableWithParent="false">
                <children>
-                  <BarChart fx:id="DailyChart" layoutX="10.0" layoutY="67.0" legendSide="RIGHT" prefHeight="236.0" prefWidth="338.0" title="Daily Breakdown">
+                  <BarChart fx:id="DailyChart" layoutX="6.0" layoutY="35.0" legendSide="RIGHT" prefHeight="236.0" prefWidth="338.0" title="Daily Breakdown">
                     <xAxis>
                       <CategoryAxis fx:id="CategoryAxis" label="Category" prefHeight="43.0" prefWidth="217.0" side="BOTTOM" tickLabelGap="2.0" />
                     </xAxis>
@@ -49,7 +49,7 @@
                       <NumberAxis fx:id="HoursAxis" autoRanging="false" label="Hours per day" minorTickCount="2" side="LEFT" tickUnit="4.0" upperBound="24.0" />
                     </yAxis>
                   </BarChart>
-                  <BarChart fx:id="WeeklyChart" layoutX="329.0" layoutY="269.0" legendSide="LEFT" legendVisible="false" prefHeight="259.0" prefWidth="336.0" title="Weekly Breakdown">
+                  <BarChart fx:id="WeeklyChart" layoutX="330.0" layoutY="159.0" legendSide="LEFT" legendVisible="false" prefHeight="259.0" prefWidth="336.0" title="Weekly Breakdown">
                     <xAxis>
                       <CategoryAxis fx:id="CategoryAxis2" label="Category" prefHeight="48.0" prefWidth="256.0" side="BOTTOM" />
                     </xAxis>
@@ -57,7 +57,8 @@
                       <NumberAxis fx:id="HoursAxis2" autoRanging="false" label="Hours per week" minorTickCount="0" side="LEFT" tickUnit="20.0" />
                     </yAxis>
                   </BarChart>
-                  <Button fx:id="LogEntryButton" layoutX="476.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleLogEntryButtonAction" text="Log Entry" />
+                  <Button fx:id="LogEntryButton" layoutX="575.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleLogEntryButtonAction" text="Log Entry" />
+                  <PieChart fx:id="PieChart" layoutX="37.0" layoutY="275.0" prefHeight="232.0" prefWidth="291.0" title="Pie Chart of My Life" />
                </children>
             </AnchorPane>
         </items>

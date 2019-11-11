@@ -5,9 +5,12 @@
  */
 package FrontEnd;
 
+import com.sun.javafx.charts.Legend;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
@@ -16,6 +19,8 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 
 /**
@@ -53,7 +58,9 @@ public class DashboardController implements Initializable {
     @FXML
     private Button LogEntryButton;
     
-    
+    @FXML
+    private PieChart PieChart;
+
     
     PageSwitcher pageSwitcher = new PageSwitcher();
     
@@ -94,7 +101,37 @@ public class DashboardController implements Initializable {
         
         WeeklyChart.getData().addAll(series2); 
         
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                new PieChart.Data("Study", 13),
+                new PieChart.Data("Work", 25),
+                new PieChart.Data("Relax", 10),
+                new PieChart.Data("Reading", 22),
+                new PieChart.Data("Social", 30)
+        );
+        PieChart.setData(pieChartData);
         
+        String[] pieColors = {"#edadaa", "#ffa500", "#8e4585", "#d1e231", "#ff0800"};
+        int i = 0;
+        for (PieChart.Data data : pieChartData) {
+            data.getNode().setStyle(
+                    "-fx-pie-color: " + pieColors[i % pieColors.length] + ";"
+            );
+            i++;
+        }
+        i = 0;
+        
+        for (Node n : PieChart.getChildrenUnmodifiable()) {
+            if (n instanceof Legend) {
+                Legend l = (Legend) n;
+                for (Legend.LegendItem li : l.getItems()) {
+                    Node thisNode = li.getSymbol();
+                    thisNode.setStyle(
+                            "-fx-pie-color: " + pieColors[i % pieColors.length] + ";"
+                    );
+                    i++;
+                }
+            }
+        }
         
     }    
     
