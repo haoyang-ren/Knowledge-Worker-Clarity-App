@@ -59,6 +59,9 @@ public class DashboardController implements Initializable {
     private Button LogEntryButton;
     
     @FXML
+    private Button WeeklyTrendsButton;
+    
+    @FXML
     private PieChart PieChart;
 
     
@@ -77,6 +80,11 @@ public class DashboardController implements Initializable {
     @FXML
     void handleLogEntryButtonAction(ActionEvent event) throws IOException {
         pageSwitcher.switcher(event, "Entries.fxml");
+    }
+    
+    @FXML
+    void handleWeeklyTrendsButtonAction(ActionEvent event) throws IOException {
+        pageSwitcher.switcher(event, "WeeklyTrends.fxml");
     }
     
     
