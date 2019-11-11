@@ -41,7 +41,7 @@ public class Dashboard extends Application {
     
     private void loadDatabase() throws SQLException {
        //TODO: Call Database methods here to create the database
-
+       
        
     }
 }

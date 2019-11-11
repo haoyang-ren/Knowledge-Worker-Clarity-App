@@ -8,6 +8,7 @@ package FrontEnd;
 import com.sun.javafx.charts.Legend;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -87,10 +88,23 @@ public class DashboardController implements Initializable {
         pageSwitcher.switcher(event, "WeeklyTrends.fxml");
     }
     
+    //private ArrayList<String> categoryArrayList = new ArrayList<>();
+    //private ArrayList<Integer> hoursArrayList = new ArrayList<>();
+    
+    
+    
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        //DummyData
+       // categoryArrayList.add("Reading");
+       // categoryArrayList.add("Work");
+       // categoryArrayList.add("Study");
+       // categoryArrayList.add("Social");
+       // categoryArrayList.add("Relax");
+        
         
        
        // TODO
@@ -118,7 +132,7 @@ public class DashboardController implements Initializable {
         );
         PieChart.setData(pieChartData);
         
-        String[] pieColors = {"#edadaa", "#ffa500", "#8e4585", "#d1e231", "#ff0800"};
+        String[] pieColors = {"#8ee53f", "#2f7532", "#8e4585", "#1ca9c9", "#afeeee"};
         int i = 0;
         for (PieChart.Data data : pieChartData) {
             data.getNode().setStyle(
