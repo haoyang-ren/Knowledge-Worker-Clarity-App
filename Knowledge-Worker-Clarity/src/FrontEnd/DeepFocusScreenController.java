@@ -6,9 +6,7 @@
 package FrontEnd;
 
 import java.net.URL;
-import java.sql.ResultSet;
 import java.util.Date;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -16,9 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.text.DateFormat;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import javafx.event.ActionEvent;
+import javafx.geometry.Pos;
+import javafx.scene.text.Font;
 
 /**
  * FXML Controller class
@@ -47,16 +44,18 @@ public class DeepFocusScreenController implements Initializable {
 
     
     
-    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+    DateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
     
     Date date = new Date();
     
     
     //datefield.setText(dateFormat.format(date));
-       @FXML
+       @Override
         public void initialize(URL url, ResourceBundle rb) {
          try {
-               timefield.setText("Hi");
+               timefield.setText(dateFormat.format(date));
+               timefield.setAlignment(Pos.CENTER);
+                timefield.setFont(Font.font ("Arial", 24));
 
         } catch (Exception ex) {
             ex.printStackTrace();
