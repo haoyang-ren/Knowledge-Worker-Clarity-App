@@ -50,7 +50,7 @@ public class DeepFocusScreenController implements Initializable {
     
     
     //datefield.setText(dateFormat.format(date));
-       @FXML
+       @Override
         public void initialize(URL url, ResourceBundle rb) {
          try {
                timefield.setText(dateFormat.format(date));
