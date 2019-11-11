@@ -7,6 +7,7 @@ package FrontEnd;
 
 import BackEnd.Entries;
 import BackEnd.Task;
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
@@ -94,6 +95,10 @@ public class EntriesController {
             ex.printStackTrace();
         }
 
+    }
+    @FXML
+    private void handleBackButtonAction(ActionEvent event) throws IOException{
+        pageSwitcher.switcher(event, "Dashboard.fxml");
     }
 
     @FXML
