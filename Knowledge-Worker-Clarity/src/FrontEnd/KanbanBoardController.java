@@ -35,6 +35,8 @@ public class KanbanBoardController {
     @FXML
     private Button previous;
 
+    @FXML
+    private Button next;
 
     @FXML
     private Button showTask;
@@ -47,7 +49,7 @@ public class KanbanBoardController {
     private void handlePreviousButton(ActionEvent event) {
         try {
 
-            pageSwitcher.switcher(event, "Dashboard.fxml");
+            pageSwitcher.switcher(event, "Entries.fxml");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -101,6 +103,15 @@ public class KanbanBoardController {
 
     }
 
+    @FXML
+    private void handleNextButton(ActionEvent event) {
+        /*try {
+
+            pageSwitcher.switcher(event, "DeepFocusScreen.fxml");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }*/
+    }
 
     @FXML
     public void initialize() {
