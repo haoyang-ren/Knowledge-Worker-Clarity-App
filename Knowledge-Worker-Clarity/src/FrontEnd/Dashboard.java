@@ -5,6 +5,7 @@
  */
 package FrontEnd;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -39,9 +40,19 @@ public class Dashboard extends Application {
         launch(args);
     }
     
-    private void loadDatabase() throws SQLException {
+    private void loadDatabase() throws IOException, ClassNotFoundException {
        //TODO: Call Database methods here to create the database
+       Database d = new Database();
+        try{
+            Database.connect();
+            d.insertDummyData();
+             
+        } catch (SQLException createTableException) {
+            System.err.println(createTableException);
+       
        
        
     }
+    }
 }
+
