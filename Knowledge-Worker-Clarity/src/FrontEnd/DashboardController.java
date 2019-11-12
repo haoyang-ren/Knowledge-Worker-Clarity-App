@@ -8,6 +8,8 @@ package FrontEnd;
 import com.sun.javafx.charts.Legend;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -87,19 +89,47 @@ public class DashboardController implements Initializable {
         pageSwitcher.switcher(event, "WeeklyTrends.fxml");
     }
     
+    //private ArrayList<String> categoryArrayList = new ArrayList<>();
+    //private ArrayList<Integer> hoursArrayList = new ArrayList<>();
+    
+    
+    
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        //DummyData
+       // categoryArrayList.add("Reading");
+       // categoryArrayList.add("Work");
+       // categoryArrayList.add("Study");
+       // categoryArrayList.add("Social");
+       // categoryArrayList.add("Relax");
+        try{
+        Database d = new Database();
+        String dailyQuery = "SELECT CATEGORY, DURATION from ENTRIES ORDER BY CATEGORY asc;";
         
-       
        // TODO
-        XYChart.Series series1 = new XYChart.Series();
-        series1.setName("Time Spent");
-        series1.getData().add(new XYChart.Data("Work", 3));
-        series1.getData().add(new XYChart.Data("Reading", 10));
+        XYChart.Series<String, Integer> series1 = new XYChart.Series<>();
         
-        DailyChart.getData().addAll(series1); 
+        
+        ResultSet rs = d.getResultSet(dailyQuery);
+        series1.setName("Time Spent");
+        
+        while (rs.next()){
+            String category = rs.getString(1);
+            int hours = rs.getInt(2);
+            series1.getData().add(new XYChart.Data<>(category, hours));
+        }
+        DailyChart.getData().addAll(series1);
+        }catch (Exception e){
+        }
+        
+       // series1.setName("Time Spent");
+        //series1.getData().add(new XYChart.Data("Work", 3));
+        //series1.getData().add(new XYChart.Data("Reading", 10));
+        
+       // DailyChart.getData().addAll(series1); 
         
         XYChart.Series series2 = new XYChart.Series();
         series2.setName("Time Spent");
@@ -108,6 +138,13 @@ public class DashboardController implements Initializable {
         series2.getData().add(new XYChart.Data("Work", 20));
         
         WeeklyChart.getData().addAll(series2); 
+        
+        
+        
+        
+        
+        
+        
         
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
                 new PieChart.Data("Study", 13),
@@ -118,7 +155,7 @@ public class DashboardController implements Initializable {
         );
         PieChart.setData(pieChartData);
         
-        String[] pieColors = {"#edadaa", "#ffa500", "#8e4585", "#d1e231", "#ff0800"};
+        String[] pieColors = {"#8ee53f", "#2f7532", "#8e4585", "#1ca9c9", "#afeeee"};
         int i = 0;
         for (PieChart.Data data : pieChartData) {
             data.getNode().setStyle(
