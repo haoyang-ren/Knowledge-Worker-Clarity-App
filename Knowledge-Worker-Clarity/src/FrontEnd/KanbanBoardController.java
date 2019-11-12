@@ -6,6 +6,7 @@
 package FrontEnd;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import javafx.event.ActionEvent;
@@ -58,19 +59,28 @@ public class KanbanBoardController {
     @FXML
     private void handleShowTaskButton(ActionEvent event) {
 
+        compeletedTask.setText("Title" + " : " + "Description\n");
+
+        todayTask.setText("Title" + " : " + "Description");
+        
+        tomorrowTask.setText("Title" + " : " + "Description");
+        
+        weekTask.setText("Title" + " : " + "Description");
+        
         try {
-            String getEntries = "SELECT STARTTIME ENDTIME FROM Entries ";
+            /*String getEntries = "SELECT STARTTIME ENDTIME FROM Entries ";
             ResultSet entriesSet = d.getResultSet(getEntries);
             if (entriesSet.next()) {
                 ZoneId zone = ZoneId.systemDefault();
                 LocalDate startDate = entriesSet.getDate("STARTTIME").toInstant().atZone(zone).toLocalDate();
                 LocalDate endDate = entriesSet.getDate("ENDTIME").toInstant().atZone(zone).toLocalDate();
-
-                String getTask = "SELECT TASKTITLE TASKDESCRIPTION TASKDODATE TASKDUEDATE TASKPRIORITY FROM Tasks "
-                        + "WHERE TASKDODATE > '" + startDate + "' "
-                        + "AND TASKDUEDATE < '" + endDate + "';";
+                */
+                ZoneId zone = ZoneId.systemDefault();
+                String getTask = "SELECT TASKTITLE TASKDESCRIPTION TASKDODATE TASKDUEDATE TASKPRIORITY FROM Tasks ";
+                        //+ "WHERE TASKDODATE > '" + startDate + "' "
+                        //+ "AND TASKDUEDATE < '" + endDate + "';";
                 ResultSet taskSet = d.getResultSet(getTask);
-                if (taskSet.next()) {
+                while (taskSet.next()) {
                     String taskTitle = taskSet.getString("TASKTITLE");
                     String taskDescription = taskSet.getString("TASKDESCRIPTION");
                     LocalDate taskDoDate = taskSet.getDate("TASKDODATE").toInstant().atZone(zone).toLocalDate();
@@ -79,24 +89,24 @@ public class KanbanBoardController {
 
                     LocalDate currentTime = LocalDate.now(zone);
                     KanbanBoard kanban = new KanbanBoard(currentTime, taskDoDate, taskDueDate);
-                    if (kanban.checkCompleted(currentTime, startDate, endDate) == true) {
+                    if (kanban.checkCompleted(currentTime, taskDoDate, taskDueDate) == true) {
                         compeletedTask.setText(taskTitle + " : " + taskDescription);
                     }
-                    if (kanban.checkToday(currentTime, startDate, endDate) == true) {
+                    if (kanban.checkToday(currentTime, taskDoDate, taskDueDate) == true) {
                         todayTask.setText(taskTitle + " : " + taskDescription);
                     }
-                    if (kanban.checkTomorrow(currentTime, startDate, endDate) == true) {
+                    if (kanban.checkTomorrow(currentTime, taskDoDate, taskDueDate) == true) {
                         tomorrowTask.setText(taskTitle + " : " + taskDescription);
                     }
-                    if (kanban.checkWeek(currentTime, startDate, endDate) == true) {
+                    if (kanban.checkWeek(currentTime, taskDoDate, taskDueDate) == true) {
                         weekTask.setText(taskTitle + " : " + taskDescription);
                     }
                     
                 }
                 taskSet.close();
-            }
+            //}
 
-            entriesSet.close();
+            //entriesSet.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }

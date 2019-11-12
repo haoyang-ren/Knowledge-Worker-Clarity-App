@@ -65,6 +65,9 @@ public class DashboardController implements Initializable {
     
     @FXML
     private PieChart PieChart;
+    
+    @FXML
+    private Button aboutButton;
 
     
     PageSwitcher pageSwitcher = new PageSwitcher();
@@ -88,6 +91,12 @@ public class DashboardController implements Initializable {
     void handleWeeklyTrendsButtonAction(ActionEvent event) throws IOException {
         pageSwitcher.switcher(event, "WeeklyTrends.fxml");
     }
+    
+    @FXML
+    void handleAboutButtonAction(ActionEvent event) throws IOException {
+        pageSwitcher.switcher(event, "About.fxml");
+    }
+    
     
     //private ArrayList<String> categoryArrayList = new ArrayList<>();
     //private ArrayList<Integer> hoursArrayList = new ArrayList<>();
@@ -115,7 +124,7 @@ public class DashboardController implements Initializable {
         
         ResultSet rs = d.getResultSet(dailyQuery);
         series1.setName("Time Spent");
-        
+                
         while (rs.next()){
             String category = rs.getString(1);
             int hours = rs.getInt(2);
