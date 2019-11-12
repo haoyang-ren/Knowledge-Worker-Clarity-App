@@ -103,8 +103,10 @@ public class Database {
         s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-07 10:21','2019-11-07 22:21','20.0', 'Notes', 'Studying');");
         s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-08 10:21','2019-11-07 22:21','20.0', 'Notes', 'Reading');");
         
-        s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching cat videos','2014-10-23 15:21:07', '2014-10-23 22:21:07', '1');");
-        
+        s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching cat videos','2014-10-23 15:21', '2014-10-23 22:21', '1');");
+        s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching dog videos','2019-11-12 18:21', '2020-11-12 18:21', '1');");
+        s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching horse videos','2019-11-13 23:21', '2019-11-13 23:25', '1');");
+        s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching midget videos','2019-11-15 18:21', '2019-11-20 18:21', '1');");
         
         
         s.close();
