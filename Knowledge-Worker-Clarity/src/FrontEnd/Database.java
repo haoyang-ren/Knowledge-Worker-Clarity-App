@@ -52,7 +52,7 @@ public class Database {
 
     public static void connect() throws ClassNotFoundException, SQLException {
         //create connection
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:Database.db");
+        openConnection();
 
         //create statement
         Statement st = conn.createStatement();
@@ -88,7 +88,7 @@ public class Database {
 
     public static void insertEntries(Entries entry) throws SQLException {
         //create connection
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:Database.db");
+        openConnection();
         //create statement
 
         //EntriesController ec = new EntriesController();
@@ -110,7 +110,7 @@ public class Database {
 
     public static void insertTasks(Task task) throws SQLException {
 
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:Database.db");
+       openConnection();
 
         String myPreparedSt = "INSERT OR IGNORE INTO Tasks (TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY)"
                 + "VALUES (?,?,?,?,?)";
@@ -125,6 +125,9 @@ public class Database {
         st.execute(myPreparedSt);
 
     }
+    
+    
+    
 
 
 }
