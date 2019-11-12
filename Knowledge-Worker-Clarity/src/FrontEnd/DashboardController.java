@@ -116,7 +116,9 @@ public class DashboardController implements Initializable {
        // categoryArrayList.add("Relax");
         try{
         Database d = new Database();
-        String dailyQuery = "SELECT CATEGORY, SUM(DURATION) from ENTRIES GROUP BY CATEGORY ORDER BY CATEGORY asc;"; //groupby category
+        String dailyQuery = "SELECT CATEGORY, SUM(DURATION) from ENTRIES"
+                + " WHERE STARTTIME BETWEEN datetime('now', 'start of day') AND datetime ('now', 'localtime')"
+                + "GROUP BY CATEGORY ORDER BY CATEGORY asc;";
         
        // TODO
         XYChart.Series<String, Integer> series1 = new XYChart.Series<>();
