@@ -6,8 +6,8 @@
 package FrontEnd;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import javafx.event.ActionEvent;
@@ -83,13 +83,13 @@ public class KanbanBoardController {
             while (taskSet.next()) {
                 String taskTitle = taskSet.getString("TASKTITLE");
                 String taskDescription = taskSet.getString("TASKDESCRIPTION");
-                LocalDate taskDoDate =LocalDate.parse(taskSet.getString("TASKDODATE"), formatter);
-                LocalDate taskDueDate =LocalDate.parse(taskSet.getString("TASKDUEDATE"), formatter);
+                LocalDateTime taskDoDate =LocalDateTime.parse(taskSet.getString("TASKDODATE"), formatter);
+                LocalDateTime taskDueDate =LocalDateTime.parse(taskSet.getString("TASKDUEDATE"), formatter);
                         //.getDate("TASKDODATE").toInstant().atZone(zone).toLocalDate();
                 //LocalDate taskDueDate = taskSet.getDate("TASKDUEDATE").toInstant().atZone(zone).toLocalDate();
                 int taskPriority = taskSet.getInt("TASKPRIORITY");
 
-                LocalDate currentTime = LocalDate.now(zone);
+                LocalDateTime currentTime = LocalDateTime.now(zone);
                 KanbanBoard kanban = new KanbanBoard(currentTime, taskDoDate, taskDueDate);
                 if (kanban.checkCompleted(currentTime, taskDoDate, taskDueDate) == true) {
                     compeletedTask.setText(taskTitle + " : " + taskDescription);
