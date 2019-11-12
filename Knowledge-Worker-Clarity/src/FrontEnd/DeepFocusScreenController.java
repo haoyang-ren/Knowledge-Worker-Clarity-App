@@ -6,6 +6,7 @@
 package FrontEnd;
 
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
@@ -65,22 +66,28 @@ public class DeepFocusScreenController implements Initializable {
     @FXML
     private Button back;
 
-    //Database d = new Database();
+    Database d = new Database();
     DateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
 
     Date date = new Date();
 
-    //datefield.setText(dateFormat.format(date));
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
 
-            // String getTasks = "SELECT STARTTIME ENDTIME FROM Entries ";
-            // ResultSet taskSet = d.getResultSet(getTasks);
-            //   if (taskSet.next()) {
-            //       String taskTitle = taskSet.getString("TASKTITLE");
-            //       String taskDescription = taskSet.getString("TASKDESCRIPTION");
-            //   }
+
+
+            String getTasks = "SELECT TASKTITLE TASKDESCRIPTION FROM Tasks ";
+            ResultSet taskSet = d.getResultSet(getTasks);
+            if (taskSet.next()) {
+                String taskTitle = taskSet.getString("TASKTITLE");
+                String taskDescription = taskSet.getString("TASKDESCRIPTION");
+                tasklist.getItems().add("Choice 1");
+
+                System.out.println(taskTitle);
+
+            }
+            
             //Display current date
             datefield.setText(dateFormat.format(date));
             datefield.setAlignment(Pos.CENTER);
@@ -91,6 +98,7 @@ public class DeepFocusScreenController implements Initializable {
             timefield.setAlignment(Pos.CENTER);
             timefield.setFont(Font.font("Arial", 24));
 
+            //Source:
             Timeline timepiece = new Timeline(new KeyFrame(Duration.ZERO, e -> {
                 LocalTime timeNow = LocalTime.now();
                 timefield.setText(timeNow.getHour() + ":" + timeNow.getMinute() + ":" + timeNow.getSecond());
