@@ -56,10 +56,10 @@ public class Database {
 
         //create statement
         Statement st = conn.createStatement();
-       // String createStatement3 = "DROP TABLE Entries ";
-        //String createStatement4 = "DROP TABLE Tasks ";
-        //st.execute(createStatement3);
-        //st.execute(createStatement4);
+       String createStatement3 = "DROP TABLE Entries ";
+        String createStatement4 = "DROP TABLE Tasks ";
+        st.execute(createStatement3);
+        st.execute(createStatement4);
         //create your table
         String createStatement = "CREATE TABLE IF NOT EXISTS Entries "
                 + "(ID INTEGER PRIMARY KEY, "
@@ -96,8 +96,8 @@ public class Database {
 
         Statement s = conn.createStatement();
 
-        s.execute("INSERT OR REPLACE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 20:21:07','5.0', 'Notes', 'Studying');");
-        s.execute("INSERT OR REPLACE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 22:21:07','7.0', 'Notes', 'Procrastinating');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 20:21:07','5.0', 'Notes', 'Studying');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 22:21:07','7.0', 'Notes', 'Studying');");
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching cat videos','2014-10-23 15:21:07', '2014-10-23 22:21:07', '1');");
         
         
