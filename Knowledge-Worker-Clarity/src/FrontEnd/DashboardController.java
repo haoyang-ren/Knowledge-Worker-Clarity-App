@@ -114,8 +114,9 @@ public class DashboardController implements Initializable {
        // categoryArrayList.add("Study");
        // categoryArrayList.add("Social");
        // categoryArrayList.add("Relax");
-        try{
         Database d = new Database();
+        try{
+        
         String dailyQuery = "SELECT CATEGORY, SUM(DURATION) from ENTRIES"
                 + " WHERE STARTTIME BETWEEN datetime('now', 'start of day') AND datetime ('now', 'localtime')"
                 + "GROUP BY CATEGORY ORDER BY CATEGORY asc;";
@@ -141,14 +142,35 @@ public class DashboardController implements Initializable {
         //series1.getData().add(new XYChart.Data("Reading", 10));
         
        // DailyChart.getData().addAll(series1); 
+        try{
+            
+            String weeklyQuery = "SELECT CATEGORY, SUM(DURATION) from ENTRIES"
+                    + " WHERE STARTTIME BETWEEN datetime ('now', '-6 days') AND datetime ('now', 'localtime')"
+                    + " GROUP BY CATEGORY ORDER BY CATEGORY asc;";
+            
+            XYChart.Series<String, Integer> series2 = new XYChart.Series<>();
+            
+            ResultSet rs2 = d.getResultSet(weeklyQuery);
+            series2.setName("Time Spent");
+            
+            while (rs2.next()){
+            String category = rs2.getString(1);
+            int hours = rs2.getInt(2);
+            series2.getData().add(new XYChart.Data<>(category, hours));
+        }
+            WeeklyChart.getData().addAll(series2);
+        }catch(Exception e){
+            
+        }
         
-        XYChart.Series series2 = new XYChart.Series();
-        series2.setName("Time Spent");
-        series2.getData().add(new XYChart.Data("Study",99));
-        series2.getData().add(new XYChart.Data("Relax", 50));
-        series2.getData().add(new XYChart.Data("Work", 20));
         
-        WeeklyChart.getData().addAll(series2); 
+       // XYChart.Series series2 = new XYChart.Series();
+        //series2.setName("Time Spent");
+       // series2.getData().add(new XYChart.Data("Study",99));
+       // series2.getData().add(new XYChart.Data("Relax", 50));
+       // series2.getData().add(new XYChart.Data("Work", 20));
+        
+       // WeeklyChart.getData().addAll(series2); 
         
         
         
