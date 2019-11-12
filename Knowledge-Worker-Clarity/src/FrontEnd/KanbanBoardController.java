@@ -56,59 +56,57 @@ public class KanbanBoardController {
 
     @FXML
     private void handleShowTaskButton(ActionEvent event) {
-
+        // Default placeholder incase user have not task input
         compeletedTask.setText("Title" + " : " + "Description\n");
-
         todayTask.setText("Title" + " : " + "Description");
-
         tomorrowTask.setText("Title" + " : " + "Description");
-
         weekTask.setText("Title" + " : " + "Description");
+        
+        StringBuilder compeletedTaskString = new StringBuilder();
+        StringBuilder todayTaskString = new StringBuilder();
+        StringBuilder tomorrowTaskString = new StringBuilder();
+        StringBuilder weekTaskString = new StringBuilder();
 
         try {
-            /*String getEntries = "SELECT STARTTIME ENDTIME FROM Entries ";
-            ResultSet entriesSet = d.getResultSet(getEntries);
-            if (entriesSet.next()) {
-                ZoneId zone = ZoneId.systemDefault();
-                LocalDate startDate = entriesSet.getDate("STARTTIME").toInstant().atZone(zone).toLocalDate();
-                LocalDate endDate = entriesSet.getDate("ENDTIME").toInstant().atZone(zone).toLocalDate();
-             */
             ZoneId zone = ZoneId.systemDefault();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-            
+
             String getTask = "SELECT TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY FROM Tasks ";
-            //+ "WHERE TASKDODATE > '" + startDate + "' "
-            //+ "AND TASKDUEDATE < '" + endDate + "';";
             ResultSet taskSet = d.getResultSet(getTask);
             while (taskSet.next()) {
                 String taskTitle = taskSet.getString("TASKTITLE");
                 String taskDescription = taskSet.getString("TASKDESCRIPTION");
-                LocalDateTime taskDoDate =LocalDateTime.parse(taskSet.getString("TASKDODATE"), formatter);
-                LocalDateTime taskDueDate =LocalDateTime.parse(taskSet.getString("TASKDUEDATE"), formatter);
-                        //.getDate("TASKDODATE").toInstant().atZone(zone).toLocalDate();
-                //LocalDate taskDueDate = taskSet.getDate("TASKDUEDATE").toInstant().atZone(zone).toLocalDate();
+                LocalDateTime taskDoDate = LocalDateTime.parse(taskSet.getString("TASKDODATE"), formatter);
+                LocalDateTime taskDueDate = LocalDateTime.parse(taskSet.getString("TASKDUEDATE"), formatter);
                 int taskPriority = taskSet.getInt("TASKPRIORITY");
 
                 LocalDateTime currentTime = LocalDateTime.now(zone);
                 KanbanBoard kanban = new KanbanBoard(currentTime, taskDoDate, taskDueDate);
                 if (kanban.checkCompleted(currentTime, taskDoDate, taskDueDate) == true) {
-                    compeletedTask.setText(taskTitle + " : " + taskDescription);
+                    //compeletedTask.setText(taskTitle + " : " + taskDescription);
+                    compeletedTaskString.append(taskTitle).append(" : ").append(taskDescription).append("\n");
                 }
                 if (kanban.checkToday(currentTime, taskDoDate, taskDueDate) == true) {
-                    todayTask.setText(taskTitle + " : " + taskDescription);
+                    //todayTask.setText(taskTitle + " : " + taskDescription);
+                    todayTaskString.append(taskTitle).append(" : ").append(taskDescription).append("\n");
                 }
                 if (kanban.checkTomorrow(currentTime, taskDoDate, taskDueDate) == true) {
-                    tomorrowTask.setText(taskTitle + " : " + taskDescription);
+                    //tomorrowTask.setText(taskTitle + " : " + taskDescription);
+                    tomorrowTaskString.append(taskTitle).append(" : ").append(taskDescription).append("\n");
                 }
                 if (kanban.checkWeek(currentTime, taskDoDate, taskDueDate) == true) {
-                    weekTask.setText(taskTitle + " : " + taskDescription);
+                    //weekTask.setText(taskTitle + " : " + taskDescription);
+                    weekTaskString.append(taskTitle).append(" : ").append(taskDescription).append("\n");
                 }
 
             }
-            taskSet.close();
-            //}
+            
+            compeletedTask.setText(compeletedTaskString.toString());
+            todayTask.setText(todayTaskString.toString());
+            tomorrowTask.setText(tomorrowTaskString.toString());
+            weekTask.setText(weekTaskString.toString());
 
-            //entriesSet.close();
+            taskSet.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
