@@ -56,10 +56,13 @@ public class Database {
 
         //create statement
         Statement st = conn.createStatement();
-
+       // String createStatement3 = "DROP TABLE Entries ";
+        //String createStatement4 = "DROP TABLE Tasks ";
+        //st.execute(createStatement3);
+        //st.execute(createStatement4);
         //create your table
         String createStatement = "CREATE TABLE IF NOT EXISTS Entries "
-                + "(ID INTEGER PRIMARY KEY AUTO_INCREMENT, "
+                + "(ID INTEGER PRIMARY KEY, "
                 + "STARTTIME DATETIME NOT NULL, "
                 + "ENDTIME DATETIME NOT NULL,"
                 + "DURATION DOUBLE NOT NULL, "
@@ -70,7 +73,7 @@ public class Database {
         st.execute(createStatement);
 
         String createStatement2 = "CREATE TABLE IF NOT EXISTS Tasks "
-                + "(ID INTEGER PRIMARY KEY AUTO_INCREMENT=100000, "
+                + "(ID INTEGER PRIMARY KEY, "
                 + "TASKTITLE TEXT NOT NULL, "
                 + "TASKDESCRIPTION TEXT NOT NULL,"
                 + "TASKDODATE DATETIME NOT NULL, "
@@ -80,11 +83,29 @@ public class Database {
 
         st.execute(createStatement2);
         //cleanup code (close statement and connection objects)
+        // conn.close();
 
-        st.close();
-        conn.close();
+        
+        
 
     }
+    
+    public void insertDummyData() throws SQLException {
+
+        openConnection();
+
+        Statement s = conn.createStatement();
+
+        s.execute("INSERT OR REPLACE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 20:21:07','5.0', 'Notes', 'Studying');");
+        s.execute("INSERT OR REPLACE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 22:21:07','7.0', 'Notes', 'Procrastinating');");
+        s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching cat videos','2014-10-23 15:21:07', '2014-10-23 22:21:07', '1');");
+        
+        
+        
+        s.close();
+       // conn.close();
+        
+    } 
 
     public static void insertEntries(Entries entry) throws SQLException {
         //create connection

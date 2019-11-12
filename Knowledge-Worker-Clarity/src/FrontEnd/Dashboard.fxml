@@ -15,11 +15,11 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="KanbanButton" layoutX="-5.0" layoutY="127.0" mnemonicParsing="false" onAction="#handleKanbanButtonAction" prefHeight="85.0" prefWidth="217.0" text="Kanban Board">
+                  <Button fx:id="KanbanButton" layoutX="-5.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleKanbanButtonAction" prefHeight="85.0" prefWidth="217.0" text="Kanban Board">
                      <font>
                         <Font name="System Font" size="18.0" />
                      </font></Button>
-                  <Button fx:id="DeepFocusButton" layoutX="-3.0" layoutY="216.0" mnemonicParsing="false" onAction="#handleDeepFocusButtonAction" prefHeight="85.0" prefWidth="217.0" text="Deep Focus Screen">
+                  <Button fx:id="DeepFocusButton" layoutX="-3.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleDeepFocusButtonAction" prefHeight="85.0" prefWidth="217.0" text="Deep Focus Screen">
                      <font>
                         <Font size="18.0" />
                      </font></Button>
@@ -33,12 +33,17 @@
                         <Image url="@../images/claritylogo.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="-4.0" layoutY="305.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="217.0" text="Daily Learnings " textAlignment="CENTER" wrapText="true">
+                  <Button layoutX="-4.0" layoutY="277.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="217.0" text="Daily Learnings " textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="WeeklyTrendsButton" layoutX="-8.0" layoutY="393.0" mnemonicParsing="false" onAction="#handleWeeklyTrendsButtonAction" prefHeight="85.0" prefWidth="217.0" text="Weekly Trends">
+                  <Button fx:id="WeeklyTrendsButton" layoutX="-8.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleWeeklyTrendsButtonAction" prefHeight="85.0" prefWidth="217.0" text="Weekly Trends">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="aboutButton" layoutX="-4.0" layoutY="455.0" mnemonicParsing="false" onAction="#handleAboutButtonAction" prefHeight="85.0" prefWidth="217.0" text="About">
                      <font>
                         <Font size="18.0" />
                      </font>
