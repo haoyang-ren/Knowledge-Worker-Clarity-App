@@ -96,14 +96,14 @@ public class Database {
 
         Statement s = conn.createStatement();
 
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 20:21','5.0', 'Notes', 'Studying');");
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 22:21','7.0', 'Notes', 'Studying');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21','2014-10-23 20:21','5.0', 'Notes', 'Studying');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21','2014-10-23 22:21','7.0', 'Notes', 'Studying');");
         s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-12 10:21','2019-11-12 10:21','7.0', 'Notes', 'Studying');");
         s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-12 10:21','2019-11-12:10:07','10.0', 'Notes', 'Procrastinating');");
         s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-07 10:21','2019-11-07 22:21','20.0', 'Notes', 'Studying');");
         s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-08 10:21','2019-11-07 22:21','20.0', 'Notes', 'Reading');");
         
-        s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching cat videos','2014-10-23 15:21:07', '2014-10-23 22:21:07', '1');");
+        s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching cat videos','2014-10-23 15:21', '2014-10-23 22:21', '1');");
         
         
         

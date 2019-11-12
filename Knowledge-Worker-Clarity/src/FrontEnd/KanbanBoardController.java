@@ -73,13 +73,18 @@ public class KanbanBoardController {
                 LocalDate startDate = entriesSet.getDate("STARTTIME").toInstant().atZone(zone).toLocalDate();
                 LocalDate endDate = entriesSet.getDate("ENDTIME").toInstant().atZone(zone).toLocalDate();
              */
-            ZoneId zone = ZoneId.systemDefault();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("YYYY-MM-DD HH:MM");
             
-            String getTask = "SELECT TASKTITLE TASKDESCRIPTION TASKDODATE TASKDUEDATE TASKPRIORITY FROM Tasks ";
+            
+            
+            
+            ZoneId zone = ZoneId.systemDefault();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+            
+            String getTask = "SELECT TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY FROM Tasks ";
             //+ "WHERE TASKDODATE > '" + startDate + "' "
             //+ "AND TASKDUEDATE < '" + endDate + "';";
             ResultSet taskSet = d.getResultSet(getTask);
+            System.out.println("task set is "+taskSet.toString());
             while (taskSet.next()) {
                 String taskTitle = taskSet.getString("TASKTITLE");
                 String taskDescription = taskSet.getString("TASKDESCRIPTION");
