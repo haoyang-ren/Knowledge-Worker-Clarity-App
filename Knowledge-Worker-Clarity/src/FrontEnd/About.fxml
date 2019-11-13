@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.AboutController">
-    
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.AboutController">
+   <children>
+      <ImageView fitHeight="222.0" fitWidth="555.0" layoutX="23.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Copyright.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="back" layoutX="502.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Back" />
+      <Text layoutX="102.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="384904CE-7CBD-4ADE-96DE-A163A6D77E39">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>
