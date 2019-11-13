@@ -47,7 +47,7 @@
           <NumberAxis fx:id="HoursAxis" autoRanging="false" label="Hours per day" minorTickCount="2" side="LEFT" tickUnit="4.0" upperBound="24.0" />
         </yAxis>
       </BarChart>
-      <PieChart fx:id="PieChart" layoutX="247.0" layoutY="302.0" prefHeight="232.0" prefWidth="291.0" title="Pie Chart of My Life" />
+      <PieChart fx:id="PieChart" layoutX="247.0" layoutY="302.0" legendVisible="false" prefHeight="232.0" prefWidth="291.0" title="Pie Chart of My Life" />
       <Button fx:id="KanbanButton" alignment="CENTER" layoutX="45.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleKanbanButtonAction" prefHeight="70.0" prefWidth="161.0" style="-fx-background-color: #ace5ee;" text="Kanban Board" textFill="#052d36">
          <font>
             <Font size="18.0" />
