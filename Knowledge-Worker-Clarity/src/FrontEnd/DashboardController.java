@@ -94,16 +94,16 @@ public class DashboardController implements Initializable {
     
     @FXML
     void handleAboutButtonAction(ActionEvent event) throws IOException {
-        pageSwitcher.switcher(event, "About.fxml");
+       pageSwitcher.switcher(event, "About.fxml");     
     }
     
-    
+       
     //private ArrayList<String> categoryArrayList = new ArrayList<>();
     //private ArrayList<Integer> hoursArrayList = new ArrayList<>();
     
+   
     
-    
-    
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

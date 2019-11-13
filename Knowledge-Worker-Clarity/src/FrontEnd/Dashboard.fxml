@@ -39,7 +39,7 @@
           <NumberAxis fx:id="HoursAxis2" autoRanging="false" label="Hours per week" minorTickCount="0" side="LEFT" tickUnit="20.0" />
         </yAxis>
       </BarChart>
-      <BarChart fx:id="DailyChart" layoutX="203.0" layoutY="78.0" legendSide="RIGHT" prefHeight="236.0" prefWidth="338.0" title="Daily Breakdown">
+      <BarChart fx:id="DailyChart" layoutX="203.0" layoutY="78.0" legendSide="RIGHT" legendVisible="false" prefHeight="236.0" prefWidth="338.0" title="Daily Breakdown">
         <xAxis>
           <CategoryAxis fx:id="CategoryAxis" label="Category" prefHeight="43.0" prefWidth="217.0" side="BOTTOM" tickLabelGap="2.0" />
         </xAxis>
