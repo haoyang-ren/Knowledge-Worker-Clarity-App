@@ -51,7 +51,9 @@ public class WeeklyTrendsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // TODO      
+        Database d = new Database();
+        
         XYChart.Series series = new XYChart.Series();
         
         series.getData().add(new XYChart.Data("1", 23));
