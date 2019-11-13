@@ -172,44 +172,50 @@ public class DashboardController implements Initializable {
         
        // WeeklyChart.getData().addAll(series2); 
         
-        
-        
-        
-        
-        
-        
-        
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("Study", 13),
-                new PieChart.Data("Work", 25),
-                new PieChart.Data("Relax", 10),
-                new PieChart.Data("Reading", 22),
-                new PieChart.Data("Social", 30)
-        );
-        PieChart.setData(pieChartData);
-        
-        String[] pieColors = {"#8ee53f", "#2f7532", "#8e4585", "#1ca9c9", "#afeeee"};
-        int i = 0;
-        for (PieChart.Data data : pieChartData) {
-            data.getNode().setStyle(
+        try{
+             String pieQuery = "SELECT CATEGORY, SUM(DURATION) from ENTRIES"
+                    + " GROUP BY CATEGORY ORDER BY CATEGORY asc;";
+             
+             
+             ResultSet rs3 = d.getResultSet(pieQuery);
+             
+             ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(); 
+              
+             while (rs3.next()){
+                  String category = rs3.getString(1);
+                  int hours = rs3.getInt(2);
+                  pieChartData.add(new PieChart.Data(category, hours));
+              }
+              
+              PieChart.setData(pieChartData);
+              
+              String[] pieColors = {"#8ee53f", "#2f7532", "#8e4585", "#1ca9c9", "#afeeee"};
+                int i = 0;
+                for (PieChart.Data data : pieChartData) {
+                data.getNode().setStyle(
                     "-fx-pie-color: " + pieColors[i % pieColors.length] + ";"
-            );
-            i++;
-        }
-        i = 0;
-        
-        for (Node n : PieChart.getChildrenUnmodifiable()) {
-            if (n instanceof Legend) {
-                Legend l = (Legend) n;
-                for (Legend.LegendItem li : l.getItems()) {
-                    Node thisNode = li.getSymbol();
-                    thisNode.setStyle(
-                            "-fx-pie-color: " + pieColors[i % pieColors.length] + ";"
-                    );
-                    i++;
-                }
+                );
+               i++;
             }
+            i = 0;
+        
+            for (Node n : PieChart.getChildrenUnmodifiable()) {
+                if (n instanceof Legend) {
+                    Legend l = (Legend) n;
+                    for (Legend.LegendItem li : l.getItems()) {
+                        Node thisNode = li.getSymbol();
+                        thisNode.setStyle(
+                                "-fx-pie-color: " + pieColors[i % pieColors.length] + ";"
+                        );
+                        i++;
+                    }
+                }
+        }     
+        }catch(Exception e){
+            
         }
+        
+      
         
     }    
     

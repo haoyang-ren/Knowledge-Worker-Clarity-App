@@ -97,13 +97,17 @@ public class Database {
         Statement s = conn.createStatement();
 
         s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 20:21','5.0', 'Notes', 'Studying');");
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 22:21','7.0', 'Notes', 'Studying');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 22:21','20.0', 'Notes', 'Studying');");
         s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-12 10:21','2019-11-12 10:21','7.0', 'Notes', 'Studying');");
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-12 10:21','2019-11-12:10:07','10.0', 'Notes', 'Procrastinating');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-13 10:21','2019-11-12:10:07','100.0', 'Notes', 'Procrastinating');");
         s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-07 10:21','2019-11-07 22:21','20.0', 'Notes', 'Studying');");
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-08 10:21','2019-11-07 22:21','20.0', 'Notes', 'Reading');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-08 10:21','2019-11-07 22:21','70.0', 'Notes', 'Reading');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-07 10:21','2019-11-07 22:21','50.0', 'Notes', 'Dancing');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-08 10:21','2019-11-07 22:21','20.0', 'Notes', 'Working');");
         
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching cat videos','2014-10-23 15:21', '2014-10-23 22:21', '1');");
+        s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('DO assignment','Watching cat videos','2019-11-13 15:21', '2019-11-15 22:21', '1');");
+
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching dog videos','2019-11-12 18:21', '2020-11-12 18:21', '1');");
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching horse videos','2019-11-13 23:21', '2019-11-13 23:25', '1');");
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching midget videos','2019-11-15 18:21', '2019-11-20 18:21', '1');");
@@ -114,7 +118,7 @@ public class Database {
         
     } 
 
-    public static void insertEntries(Entries entry) throws SQLException {
+    public void insertEntries(Entries entry) throws SQLException {
         //create connection
         openConnection();
         //create statement
