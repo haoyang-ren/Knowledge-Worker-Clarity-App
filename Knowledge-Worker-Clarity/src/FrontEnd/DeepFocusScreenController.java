@@ -6,6 +6,7 @@
 package FrontEnd;
 
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
@@ -16,6 +17,7 @@ import javafx.scene.control.TextField;
 import java.text.DateFormat;
 import javafx.util.Duration;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -65,22 +67,35 @@ public class DeepFocusScreenController implements Initializable {
     @FXML
     private Button back;
 
-    //Database d = new Database();
+    Database d = new Database();
     DateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
 
     Date date = new Date();
+    ArrayList<String> tasktitles = new ArrayList<String>();
+    ArrayList<String> taskdescs = new ArrayList<String>();
 
-    //datefield.setText(dateFormat.format(date));
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+          
+            tasklist.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> updateText());
         try {
 
-            // String getTasks = "SELECT STARTTIME ENDTIME FROM Entries ";
-            // ResultSet taskSet = d.getResultSet(getTasks);
-            //   if (taskSet.next()) {
-            //       String taskTitle = taskSet.getString("TASKTITLE");
-            //       String taskDescription = taskSet.getString("TASKDESCRIPTION");
-            //   }
+            String getTask = "SELECT TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY FROM Tasks ";
+            ResultSet taskSet = d.getResultSet(getTask);
+            
+            while (taskSet.next()) {
+                String taskTitle = taskSet.getString("TASKTITLE");
+                tasktitles.add(taskTitle);
+                
+                String taskDescription = taskSet.getString("TASKDESCRIPTION");
+                taskdescs.add(taskDescription);
+                
+                tasklist.getItems().add(taskTitle);
+
+          
+            }
+            
             //Display current date
             datefield.setText(dateFormat.format(date));
             datefield.setAlignment(Pos.CENTER);
@@ -117,5 +132,17 @@ public class DeepFocusScreenController implements Initializable {
             ex.printStackTrace();
         }
     }
+    
+    private void updateText() {
+          tasknametext.setText(tasklist.getValue().toString());
+          tasknametext.setAlignment(Pos.CENTER);
+          tasknametext.setFont(Font.font("Arial", 24));
+          
+          taskdesctext.setText(taskdescs.get(tasktitles.indexOf(tasklist.getValue().toString())));
+          taskdesctext.setAlignment(Pos.CENTER);
+          taskdesctext.setFont(Font.font("Arial", 18));
+    }
+    
+ 
 
 }
