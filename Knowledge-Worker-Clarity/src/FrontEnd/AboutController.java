@@ -32,7 +32,7 @@ public class AboutController implements Initializable {
     PageSwitcher pageSwitcher = new PageSwitcher();
 
     @FXML
-    void handleBackButtonAction(ActionEvent event) throws IOException {
+    void handlebackButtonAction(ActionEvent event) throws IOException {
     pageSwitcher.switcher(event, "Dashboard.fxml");    
         
         
