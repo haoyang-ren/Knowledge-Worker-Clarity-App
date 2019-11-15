@@ -32,7 +32,7 @@ public class DailyLearningsController implements Initializable {
     private ComboBox<String> betterComboBox;
 
     @FXML
-    private ComboBox<?> wellComboBox;
+    private ComboBox<String> wellComboBox;
     
     PageSwitcher pageSwitcher = new PageSwitcher();
     Database d = new Database();
@@ -49,11 +49,31 @@ public class DailyLearningsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-         try {
+        try {
+    
+                String doneWellQuery = "SELECT DONEWELL from DailyLearnings "
+                         + "GROUP BY DONEWELL ORDER BY DONEWELL asc; ";
+    
+                ResultSet rs = d.getResultSet(doneWellQuery);
+    
+                ObservableList<String> wellList = FXCollections.observableArrayList();
+                   
+              while(rs.next()){
+                   String doneWell = rs.getString(1);
+                  wellList.add(doneWell);
+                }
+                
+                
+                wellComboBox.setItems(wellList);
+                
+        }catch(Exception e){
+            e.printStackTrace();
+    
+    }
+        try {
     
                 String doBetterQuery = "SELECT DONEBETTER from DailyLearnings "
-                         + "ORDER BY DONEBETTER asc; ";
+                         + "GROUP BY DONEBETTER ORDER BY DONEBETTER asc; ";
     
                 ResultSet rs = d.getResultSet(doBetterQuery);
     

@@ -124,8 +124,9 @@ public class Database {
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching horse videos','2019-11-16 23:21', '2019-11-13 23:25', '1');");
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Working','INFS2605','2019-11-15 18:21', '2019-11-20 18:21', '1');");
         
-        s.execute("INSERT OR REPLACE INTO DailyLearnings(DONEWELL, DONEBETTER, DATE) VALUES ('WORKED HARD', 'TRY HARDER', '2019-11-15 20:00');");
-        s.execute("INSERT OR REPLACE INTO DailyLearnings(DONEWELL, DONEBETTER, DATE) VALUES ('WORD', 'TRDER', '2019-01-15 20:00');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DONEBETTER, DATE) VALUES ('WORKED HARD', 'TRY HARDER', '2019-11-15 20:00');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DONEBETTER, DATE) VALUES ('WORD', 'TRDER', '2019-01-15 20:00');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DONEBETTER, DATE) VALUES ('WORD', 'TRDER', '2019-01-15 20:00');");
         
         s.close();
        // conn.close();
