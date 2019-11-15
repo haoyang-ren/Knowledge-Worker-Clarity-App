@@ -132,7 +132,7 @@ public class Database {
 
         st.setString(1, entry.getStart());
         st.setString(2, entry.getEnd());
-        //add duration
+        st.setString(3, "20");
         st.setString(4, entry.getDescription());
         st.setString(5, entry.getCategory());
 
