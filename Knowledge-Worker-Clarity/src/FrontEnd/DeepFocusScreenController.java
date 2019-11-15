@@ -69,6 +69,12 @@ public class DeepFocusScreenController implements Initializable {
 
     @FXML
     private Button softpiano;
+    
+    @FXML
+    private Button ukulele;
+    
+    @FXML
+    private Button rock;
 
     Database d = new Database();
     DateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
