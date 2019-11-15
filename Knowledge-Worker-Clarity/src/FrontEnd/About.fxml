@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1ca9c9;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.AboutController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1ca9c9;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.AboutController">
   <tabs>
     <Tab text="Submission UUID">
       <content>
@@ -38,6 +35,10 @@
                   <Text fill="WHITE" layoutX="23.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trends Icon: Icon made by Freepik from www.flaticon.com" />
                   <Text fill="WHITE" layoutX="25.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clarity Icon: Icon made by SmashIcons from www.flaticon.com" />
                   <Text fill="WHITE" layoutX="26.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Icon: Icon made by Freepik from www.flaticon.com" />
+                  <Text fill="WHITE" layoutX="26.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Music Icon: https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Simple_Music.svg/" />
+                  <Text fill="WHITE" layoutX="26.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ukelele Music: https://www.bensound.com/royalty-free-music/track/ukulele" />
+                  <Text fill="WHITE" layoutX="26.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Soft Piano Music: https://www.bensound.com/royalty-free-music/track/romantic" />
+                  <Text fill="WHITE" layoutX="26.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rock Music: https://www.bensound.com/royalty-free-music/track/high-octane-heavy-hard-rock-metal" />
                </children>
             </AnchorPane>
         </content>
