@@ -126,8 +126,14 @@ public class Database {
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Working','INFS2605','2019-11-15 18:21', '2019-11-20 18:21', '1');");
         
         s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('WORKED HARD', 'TRY HARDER', '2019-11-15 20:00');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('WORD', 'TRDER', '2019-01-15 ');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('WORD', 'TRDER', '2019-01-15 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Work harder', '2019-11-13 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Ate healthy', 'Eat healthier', '2019-11-13 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-11-10 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Relax more', '2019-11-10 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-11-10 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Sleep earlier', '2019-11-09 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Revised alot', 'Sleep earlier', '2019-11-10 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Relax more', '2019-11-10 ');");
         
         s.close();
        // conn.close();

@@ -56,6 +56,8 @@ public class Entries {
     }
     
     
+    //NEED TO MAKE A GET DURATION
+    
   
 
 }

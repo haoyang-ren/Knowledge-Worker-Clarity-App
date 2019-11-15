@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,30 +10,40 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.DailyLearningsController">
+<AnchorPane id="AnchorPane" prefHeight="482.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.DailyLearningsController">
    <children>
-      <AnchorPane layoutX="-3.0" layoutY="-6.0" prefHeight="72.0" prefWidth="616.0" style="-fx-background-color: #1ca9c9;">
+      <AnchorPane layoutX="-3.0" layoutY="-6.0" prefHeight="72.0" prefWidth="717.0" style="-fx-background-color: #1ca9c9;">
          <children>
-            <Text fill="WHITE" layoutX="192.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daily Learnings" textAlignment="CENTER" wrappingWidth="232.85009765625">
+            <Text fill="WHITE" layoutX="245.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Daily Learnings" textAlignment="CENTER" wrappingWidth="232.85009765625">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
-      <Button fx:id="backButton" layoutX="33.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="35.0" prefWidth="91.0" style="-fx-background-color: #FFFFFF;">
-         <graphic>
-            <ImageView fitHeight="42.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/Back%20Button.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+      <Button fx:id="backButton" layoutX="3.0" layoutY="428.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="35.0" prefWidth="91.0" style="-fx-background-color: #FFFFFF;" />
       <Text layoutX="94.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What did you do well today?" />
       <Text layoutX="18.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What could you have done better today?" />
       <ComboBox fx:id="wellComboBox" editable="true" layoutX="280.0" layoutY="90.0" prefHeight="27.0" prefWidth="271.0" />
       <ComboBox fx:id="betterComboBox" editable="true" layoutX="280.0" layoutY="133.0" prefHeight="27.0" prefWidth="271.0" />
-      <Button fx:id="confirmButton" layoutX="261.0" layoutY="173.0" mnemonicParsing="false" onAction="#handleConfirmButtonAction" text="Confirm" />
+      <Button fx:id="confirmButton" layoutX="278.0" layoutY="176.0" mnemonicParsing="false" onAction="#handleConfirmButtonAction" text="Confirm" />
+      <Button fx:id="reportButton" layoutX="359.0" layoutY="176.0" mnemonicParsing="false" onAction="#handleReportButtonAction" text="Generate Report" />
+      <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="18.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Back%20Button.png" />
+         </image>
+      </ImageView>
+      <ListView fx:id="doneWellList" layoutX="27.0" layoutY="241.0" prefHeight="184.0" prefWidth="195.0" />
+      <ListView fx:id="countList" layoutX="222.0" layoutY="241.0" prefHeight="184.0" prefWidth="91.0" />
+      <ListView fx:id="countList2" layoutX="531.0" layoutY="241.0" prefHeight="184.0" prefWidth="91.0" />
+      <ListView fx:id="doBetterList" layoutX="336.0" layoutY="241.0" prefHeight="184.0" prefWidth="195.0" />
+      <Text layoutX="27.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Done well over past 30 days" wrappingWidth="195.0" />
+      <Text layoutX="222.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number" />
+      <Text layoutX="531.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number" />
+      <Text layoutX="336.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What you could have done better the past 30 days" wrappingWidth="195.0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
