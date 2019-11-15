@@ -56,10 +56,14 @@ public class Database {
 
         //create statement
         Statement st = conn.createStatement();
+        
+        // REMOVE DROP STATEMENTS BEFORE SUBMIT
         String createStatement3 = "DROP TABLE Entries ";
         String createStatement4 = "DROP TABLE Tasks ";
+        String createStatement6 = "DROP TABLE DailyLearnings ";
         st.execute(createStatement3);
         st.execute(createStatement4);
+        st.execute(createStatement6);
         //create your table
         String createStatement = "CREATE TABLE IF NOT EXISTS Entries "
                 + "(ID INTEGER PRIMARY KEY, "
@@ -84,8 +88,16 @@ public class Database {
         st.execute(createStatement2);
         //cleanup code (close statement and connection objects)
         // conn.close();
-
         
+        
+        String createStatement5 = "CREATE TABLE IF NOT EXISTS DailyLearnings "
+                + "(ID INTEGER PRIMARY KEY,"
+                + "DONEWELL TEXT NOT NULL,"
+                + "DONEBETTER TEXT NOT NULL, "
+                + "DATE TEXT NOT NULL"
+                + ");";
+
+        st.execute(createStatement5);
         
 
     }
