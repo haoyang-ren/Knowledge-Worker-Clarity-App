@@ -77,9 +77,11 @@ public class DailyLearningsController implements Initializable {
         
         int count = rs3.getInt(1);
         
-        if(count >= 30){
+        if(count > 30){
             label.setText("You are up to date!");
-            
+            confirmButton.setDisable(true);
+        }else{
+            confirmButton.setDisable(false);
         }
         
         
@@ -132,7 +134,7 @@ public class DailyLearningsController implements Initializable {
         
         int count = rs3.getInt(1);
         
-        if(count >= 30){
+        if(count > 30){
             label.setText("You are up to date!");
             
         }
