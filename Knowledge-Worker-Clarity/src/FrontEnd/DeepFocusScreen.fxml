@@ -40,21 +40,21 @@
       </Label>
       <TextField id="tasknametext" fx:id="tasknametext" editable="false" layoutX="42.0" layoutY="180.0" prefHeight="72.0" prefWidth="299.0" />
       <TextField id="taskdesctext" fx:id="taskdesctext" editable="false" layoutX="42.0" layoutY="287.0" prefHeight="72.0" prefWidth="299.0" />
-      <Label fx:id="DeepFocusLabel112" alignment="CENTER" contentDisplay="CENTER" layoutX="431.0" layoutY="82.0" text="Date &amp; Time">
+      <Label fx:id="DeepFocusLabel112" alignment="CENTER" contentDisplay="CENTER" layoutX="429.0" layoutY="62.0" text="Date &amp; Time">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField id="timefield" fx:id="timefield" alignment="CENTER" editable="false" layoutX="383.0" layoutY="101.0" prefHeight="81.0" prefWidth="173.0">
+      <TextField id="timefield" fx:id="timefield" alignment="CENTER" editable="false" layoutX="381.0" layoutY="81.0" prefHeight="81.0" prefWidth="173.0">
          <font>
             <Font name="Arial Bold" size="33.0" />
          </font></TextField>
-      <TextField id="datefield" fx:id="datefield" editable="false" layoutX="383.0" layoutY="200.0" prefHeight="81.0" prefWidth="173.0" />
-      <Button fx:id="back" alignment="CENTER_RIGHT" layoutX="489.0" layoutY="331.0" mnemonicParsing="false" onAction="#handlePreviousButton" prefHeight="25.0" prefWidth="67.0" text=" Back" />
+      <TextField id="datefield" fx:id="datefield" editable="false" layoutX="381.0" layoutY="180.0" prefHeight="81.0" prefWidth="173.0" />
+      <Button fx:id="back" alignment="CENTER_RIGHT" layoutX="510.0" layoutY="361.0" mnemonicParsing="false" onAction="#handlePreviousButton" prefHeight="25.0" prefWidth="67.0" text=" Back" />
       <AnchorPane layoutX="41.0" layoutY="179.0" opacity="0.3" prefHeight="72.0" prefWidth="299.0" style="-fx-background-color: #ace5ee;" />
       <AnchorPane layoutX="41.0" layoutY="287.0" opacity="0.3" prefHeight="72.0" prefWidth="299.0" style="-fx-background-color: #ace5ee;" />
-      <AnchorPane layoutX="383.0" layoutY="200.0" opacity="0.3" prefHeight="81.0" prefWidth="173.0" style="-fx-background-color: #ace5ee;" />
-      <AnchorPane layoutX="383.0" layoutY="101.0" opacity="0.3" prefHeight="81.0" prefWidth="173.0" style="-fx-background-color: #ace5ee;" />
+      <AnchorPane layoutX="381.0" layoutY="180.0" opacity="0.3" prefHeight="81.0" prefWidth="173.0" style="-fx-background-color: #ace5ee;" />
+      <AnchorPane layoutX="381.0" layoutY="81.0" opacity="0.3" prefHeight="81.0" prefWidth="173.0" style="-fx-background-color: #ace5ee;" />
       <AnchorPane layoutX="42.0" layoutY="107.0" opacity="0.3" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #ace5ee;" />
       <Arc fill="DODGERBLUE" layoutX="58.0" layoutY="-100.0" length="270.0" radiusX="117.0" radiusY="94.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
       <Polygon fill="#1ca9c9" layoutX="5.0" layoutY="62.0" points="89.5, -62.0, -5.0, 25.0, -5.0, -62.0" stroke="WHITE" strokeType="INSIDE" />
@@ -63,9 +63,32 @@
             <Image url="@../images/target.png" />
          </image>
       </ImageView>
-      <ImageView disable="true" fitHeight="25.0" fitWidth="27.0" layoutX="496.0" layoutY="331.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="25.0" fitWidth="27.0" layoutX="518.0" layoutY="361.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Back%20Button.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="19.0" fitWidth="25.0" layoutX="381.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Music%20Icon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="rock" layoutX="410.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleRockButton" prefHeight="25.0" prefWidth="71.0" text="Rock" />
+      <Button fx:id="ukulele" layoutX="410.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleUkeButton" prefHeight="25.0" prefWidth="71.0" text="Ukulele" />
+      <Button fx:id="softpiano" layoutX="410.0" layoutY="287.0" mnemonicParsing="false" onAction="#handlePianoButton" text="Soft Piano" />
+      <ImageView fitHeight="19.0" fitWidth="25.0" layoutX="383.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Music%20Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="1.0" fitWidth="19.0" layoutX="391.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Music%20Icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="19.0" fitWidth="25.0" layoutX="382.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Music%20Icon.png" />
          </image>
       </ImageView>
    </children>

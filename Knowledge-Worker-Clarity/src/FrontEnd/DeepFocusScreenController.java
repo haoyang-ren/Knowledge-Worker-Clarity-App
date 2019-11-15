@@ -67,6 +67,9 @@ public class DeepFocusScreenController implements Initializable {
     @FXML
     private Button back;
 
+    @FXML
+    private Button softpiano;
+
     Database d = new Database();
     DateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
 
@@ -74,28 +77,26 @@ public class DeepFocusScreenController implements Initializable {
     ArrayList<String> tasktitles = new ArrayList<String>();
     ArrayList<String> taskdescs = new ArrayList<String>();
 
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-          
-            tasklist.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> updateText());
+
+        tasklist.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> updateText());
         try {
 
             String getTask = "SELECT TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY FROM Tasks ";
             ResultSet taskSet = d.getResultSet(getTask);
-            
+
             while (taskSet.next()) {
                 String taskTitle = taskSet.getString("TASKTITLE");
                 tasktitles.add(taskTitle);
-                
+
                 String taskDescription = taskSet.getString("TASKDESCRIPTION");
                 taskdescs.add(taskDescription);
-                
+
                 tasklist.getItems().add(taskTitle);
 
-          
             }
-            
+
             //Display current date
             datefield.setText(dateFormat.format(date));
             datefield.setAlignment(Pos.CENTER);
@@ -132,17 +133,30 @@ public class DeepFocusScreenController implements Initializable {
             ex.printStackTrace();
         }
     }
-    
-    private void updateText() {
-          tasknametext.setText(tasklist.getValue().toString());
-          tasknametext.setAlignment(Pos.CENTER);
-          tasknametext.setFont(Font.font("Arial", 24));
-          
-          taskdesctext.setText(taskdescs.get(tasktitles.indexOf(tasklist.getValue().toString())));
-          taskdesctext.setAlignment(Pos.CENTER);
-          taskdesctext.setFont(Font.font("Arial", 18));
+
+    @FXML
+    private void handlePianoButton(ActionEvent event) {
+        MusicPlaybackHelper.playMusic("piano.mp3");
     }
-    
- 
+
+    @FXML
+    private void handleUkeButton(ActionEvent event) {
+        MusicPlaybackHelper.playMusic("uke.mp3");
+    }
+
+    @FXML
+    private void handleRockButton(ActionEvent event) {
+        MusicPlaybackHelper.playMusic("rock.mp3");
+    }
+
+    private void updateText() {
+        tasknametext.setText(tasklist.getValue().toString());
+        tasknametext.setAlignment(Pos.CENTER);
+        tasknametext.setFont(Font.font("Arial", 24));
+
+        taskdesctext.setText(taskdescs.get(tasktitles.indexOf(tasklist.getValue().toString())));
+        taskdesctext.setAlignment(Pos.CENTER);
+        taskdesctext.setFont(Font.font("Arial", 18));
+    }
 
 }
