@@ -29,8 +29,8 @@
       <Text layoutX="388.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Do Tomorrow" />
       <Text layoutX="401.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Next 7 days" />
       <Button fx:id="showTask" layoutX="272.0" layoutY="199.0" mnemonicParsing="false" onAction="#handleShowTaskButton" text="Show" />
-      <Button fx:id="previous" alignment="CENTER_RIGHT" layoutX="478.0" layoutY="359.0" mnemonicParsing="false" onAction="#handlePreviousButton" prefHeight="25.0" prefWidth="67.0" />
-      <ImageView disable="true" fitHeight="35.0" fitWidth="27.0" layoutX="498.0" layoutY="359.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="previous" alignment="CENTER_RIGHT" layoutX="36.0" layoutY="351.0" mnemonicParsing="false" onAction="#handlePreviousButton" prefHeight="35.0" prefWidth="72.0" style="-fx-background-color: #FFFFFF;" />
+      <ImageView disable="true" fitHeight="35.0" fitWidth="86.0" layoutX="52.0" layoutY="351.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Back%20Button.png" />
          </image>
