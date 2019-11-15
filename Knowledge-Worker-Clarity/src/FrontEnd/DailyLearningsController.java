@@ -5,9 +5,13 @@
  */
 package FrontEnd;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -16,9 +20,17 @@ import javafx.fxml.Initializable;
  */
 public class DailyLearningsController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    
+    @FXML
+    private Button backButton;
+
+    @FXML
+    void handleBackButtonAction(ActionEvent event) throws IOException {
+          pageSwitcher.switcher(event, "Dashboard.fxml");          
+    }
+    
+    PageSwitcher pageSwitcher = new PageSwitcher();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

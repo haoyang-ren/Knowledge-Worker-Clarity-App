@@ -68,6 +68,9 @@ public class DashboardController implements Initializable {
     
     @FXML
     private Button aboutButton;
+    
+    @FXML
+    private Button dailyLearningsButton;
 
     
     PageSwitcher pageSwitcher = new PageSwitcher();
@@ -95,6 +98,11 @@ public class DashboardController implements Initializable {
     @FXML
     void handleAboutButtonAction(ActionEvent event) throws IOException {
        pageSwitcher.switcher(event, "About.fxml");     
+    }
+    
+    @FXML
+    void handleDailyLearningsButtonAction(ActionEvent event) throws IOException{
+        pageSwitcher.switcher(event, "DailyLearnings.fxml");
     }
     
        
