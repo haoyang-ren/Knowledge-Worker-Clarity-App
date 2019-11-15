@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
 /**
@@ -50,6 +51,9 @@ public class DailyLearningsController implements Initializable {
     
     @FXML
     private ListView<Integer> countList2;
+    
+    @FXML
+    private Label label;
             
     PageSwitcher pageSwitcher = new PageSwitcher();
     Database d = new Database();
@@ -66,6 +70,19 @@ public class DailyLearningsController implements Initializable {
         
         try{
         d.insertLearning(doneWellInput, doBetterInput);
+        
+        String query3 = "SELECT COUNT(DOBETTER) as count from DailyLearnings;";
+        
+        ResultSet rs3 = d.getResultSet(query3);
+        
+        int count = rs3.getInt(1);
+        
+        if(count >= 30){
+            label.setText("You are up to date!");
+            
+        }
+        
+        
         }catch (Exception e){
         
         }
@@ -107,14 +124,21 @@ public class DailyLearningsController implements Initializable {
             doBetterList.getItems().add(rs2.getString(1));
             countList2.getItems().add(rs2.getInt(2));
         }
-        //series1.setName("No. of times past 30 days");
-                
-        //while (rs.next()){
-       //     String learning = rs.getString(1);
-        //    int days = rs.getInt(2);
-         //   series1.getData().add(new XYChart.Data<>(learning, days));
-       // }
-       // doneWellChart.getData().addAll(series1);
+        
+        
+        String query3 = "SELECT COUNT(DOBETTER) as count from DailyLearnings;";
+        
+        ResultSet rs3 = d.getResultSet(query3);
+        
+        int count = rs3.getInt(1);
+        
+        if(count >= 30){
+            label.setText("You are up to date!");
+            
+        }
+        
+        
+        
        }catch (Exception e){
       //  }
     }
