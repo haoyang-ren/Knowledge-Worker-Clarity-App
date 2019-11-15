@@ -34,6 +34,9 @@ public class DailyLearningsController implements Initializable {
     @FXML
     private ComboBox<String> wellComboBox;
     
+    @FXML
+    private Button confirmButton;
+    
     PageSwitcher pageSwitcher = new PageSwitcher();
     Database d = new Database();
     
@@ -42,7 +45,19 @@ public class DailyLearningsController implements Initializable {
           pageSwitcher.switcher(event, "Dashboard.fxml");          
     }
     
-    
+    @FXML
+    void handleConfirmButtonAction(ActionEvent event) throws IOException{
+        String doneWellInput = wellComboBox.getValue();
+        String doBetterInput = betterComboBox.getValue();
+        
+        try{
+        d.insertLearning(doneWellInput, doBetterInput);
+        }catch (Exception e){
+        
+        }
+        
+        
+    }
     
    
     
@@ -72,8 +87,8 @@ public class DailyLearningsController implements Initializable {
     }
         try {
     
-                String doBetterQuery = "SELECT DONEBETTER from DailyLearnings "
-                         + "GROUP BY DONEBETTER ORDER BY DONEBETTER asc; ";
+                String doBetterQuery = "SELECT DOBETTER from DailyLearnings "
+                         + "GROUP BY DOBETTER ORDER BY DOBETTER asc; ";
     
                 ResultSet rs = d.getResultSet(doBetterQuery);
     

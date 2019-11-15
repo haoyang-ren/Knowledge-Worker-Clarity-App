@@ -17,6 +17,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 
 /**
  *
@@ -93,7 +94,7 @@ public class Database {
         String createStatement5 = "CREATE TABLE IF NOT EXISTS DailyLearnings "
                 + "(ID INTEGER PRIMARY KEY,"
                 + "DONEWELL TEXT NOT NULL,"
-                + "DONEBETTER TEXT NOT NULL, "
+                + "DOBETTER TEXT NOT NULL, "
                 + "DATE TEXT NOT NULL"
                 + ");";
 
@@ -124,9 +125,9 @@ public class Database {
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching horse videos','2019-11-16 23:21', '2019-11-13 23:25', '1');");
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Working','INFS2605','2019-11-15 18:21', '2019-11-20 18:21', '1');");
         
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DONEBETTER, DATE) VALUES ('WORKED HARD', 'TRY HARDER', '2019-11-15 20:00');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DONEBETTER, DATE) VALUES ('WORD', 'TRDER', '2019-01-15 20:00');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DONEBETTER, DATE) VALUES ('WORD', 'TRDER', '2019-01-15 20:00');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('WORKED HARD', 'TRY HARDER', '2019-11-15 20:00');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('WORD', 'TRDER', '2019-01-15 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('WORD', 'TRDER', '2019-01-15 ');");
         
         s.close();
        // conn.close();
@@ -155,7 +156,7 @@ public class Database {
 
     }
 
-    public static void insertTasks(Task task) throws SQLException {
+    public void insertTasks(Task task) throws SQLException {
 
        openConnection();
 
@@ -172,7 +173,35 @@ public class Database {
         st.execute(myPreparedSt);
 
     }
-    
+    public void insertLearning(String doneWell, String doBetter) throws SQLException{
+        
+        openConnection();
+        
+       // Statement s = conn.createStatement();
+       LocalDate today = LocalDate.now(); 
+       String date = today.toString();
+       
+       
+        String myPreparedSt = "INSERT OR REPLACE INTO DailyLearnings (DONEWELL, DOBETTER, DATE)"
+                + " VALUES (?,?,?)";
+
+        try{
+        PreparedStatement st = conn.prepareStatement(myPreparedSt);
+        
+        st.setString(1, doneWell);
+        st.setString(2, doBetter);
+        st.setString(3, date);
+        
+        st.execute();
+        st.close();
+        
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+       // s.execute("INSERT OR REPLACE INTO DailyLearnings (DONEWELL, DOBETTER, DATE) VALUES ('" + doneWell + "', '" + doBetter + "', '2019-01-15');");
+        
+        //s.close();
+    }
     
     
 
