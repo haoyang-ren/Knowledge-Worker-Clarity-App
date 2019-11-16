@@ -50,7 +50,7 @@
             <Font name="Arial Bold" size="33.0" />
          </font></TextField>
       <TextField id="datefield" fx:id="datefield" editable="false" layoutX="381.0" layoutY="180.0" prefHeight="81.0" prefWidth="173.0" />
-      <Button fx:id="back" alignment="CENTER_RIGHT" layoutX="510.0" layoutY="361.0" mnemonicParsing="false" onAction="#handlePreviousButton" opacity="0.0" prefHeight="25.0" prefWidth="67.0" />
+      <Button fx:id="back" alignment="CENTER_RIGHT" layoutX="510.0" layoutY="361.0" mnemonicParsing="false" onAction="#handlePreviousButton" prefHeight="25.0" prefWidth="67.0" text=" Back" />
       <AnchorPane layoutX="41.0" layoutY="179.0" opacity="0.3" prefHeight="72.0" prefWidth="299.0" style="-fx-background-color: #ace5ee;" />
       <AnchorPane layoutX="41.0" layoutY="287.0" opacity="0.3" prefHeight="72.0" prefWidth="299.0" style="-fx-background-color: #ace5ee;" />
       <AnchorPane layoutX="381.0" layoutY="180.0" opacity="0.3" prefHeight="81.0" prefWidth="173.0" style="-fx-background-color: #ace5ee;" />
@@ -63,7 +63,7 @@
             <Image url="@../images/target.png" />
          </image>
       </ImageView>
-      <ImageView disable="true" fitHeight="33.0" fitWidth="53.0" layoutX="527.0" layoutY="357.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="25.0" fitWidth="27.0" layoutX="518.0" layoutY="361.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Back%20Button.png" />
          </image>
