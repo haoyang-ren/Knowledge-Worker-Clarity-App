@@ -119,6 +119,7 @@ public class EntriesController {
     @FXML
     private void handleBackButtonAction(ActionEvent event) throws IOException{
         pageSwitcher.switcher(event, "Dashboard.fxml");
+        
     }
 
     @FXML
