@@ -71,7 +71,7 @@ public class DashboardController implements Initializable {
     
     @FXML
     private Button dailyLearningsButton;
-
+    
     
     PageSwitcher pageSwitcher = new PageSwitcher();
     
@@ -111,7 +111,7 @@ public class DashboardController implements Initializable {
     
    
     
-
+     Database d = new Database();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -122,7 +122,7 @@ public class DashboardController implements Initializable {
        // categoryArrayList.add("Study");
        // categoryArrayList.add("Social");
        // categoryArrayList.add("Relax");
-        Database d = new Database();
+       
         try{
         
         String dailyQuery = "SELECT CATEGORY, SUM(DURATION) from ENTRIES"
@@ -235,9 +235,8 @@ public class DashboardController implements Initializable {
         }catch(Exception e){
             
         }
-        
+       
       
         
-    }    
-    
+    }
 }
