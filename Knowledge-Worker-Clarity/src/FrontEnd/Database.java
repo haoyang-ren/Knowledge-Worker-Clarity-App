@@ -58,13 +58,6 @@ public class Database {
         //create statement
         Statement st = conn.createStatement();
         
-        // REMOVE DROP STATEMENTS BEFORE SUBMIT
-          String createStatement3 = "DROP TABLE Entries ";
-          String createStatement4 = "DROP TABLE Tasks ";
-          String createStatement6 = "DROP TABLE DailyLearnings ";
-            st.execute(createStatement3);
-            st.execute(createStatement4);
-            st.execute(createStatement6);
         //create your table
         String createStatement = "CREATE TABLE IF NOT EXISTS Entries "
                 + "(ID INTEGER PRIMARY KEY, "
