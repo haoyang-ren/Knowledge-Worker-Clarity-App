@@ -10,11 +10,6 @@ import BackEnd.Task;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -50,16 +45,13 @@ public class EntriesController {
     private TextField dueDate;
 
     @FXML
-    private ComboBox<String> category;
+    private ComboBox<?> category;
 
     @FXML
     private TextField priority;
 
     @FXML
-    private Button confirmButton;
-    
-    @FXML
-    private Button confirmTaskButton;
+    private Button confirm;
 
     Database d = new Database();
     //TODO: Instatiate the PageSwitchHelper class
@@ -78,48 +70,23 @@ public class EntriesController {
     }*/
 
     @FXML
-    private void handleConfirmButtonAction(ActionEvent event) throws SQLException {
+    private void handleButtonAction(ActionEvent event) throws SQLException {
         
         String startText = this.getStartTime();
         String endText = this.getEndTime();
         String descriptionText = this.getDescription();
-        String categoryText = category.getValue();
-       
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        LocalDateTime startTime = LocalDateTime.parse(startText, formatter);
-        LocalDateTime endTime = LocalDateTime.parse(endText, formatter);
-       
-        Duration period = Duration.between(startTime, endTime);
-        long diff = period.toHours();
-        Long l = new Long(diff);
-        double dub = l.doubleValue();
-        String duration = String.valueOf(dub);
-       
-        
-        
-        Entries entry = new Entries(startText, endText, descriptionText, categoryText, duration);
-        System.out.println(entry.getDuration());
-
-        d.insertEntries(entry);
-        //Database.insertTasks(task);
-        
-        
-    }
-    
-    
-    @FXML
-    private void handleConfirmTaskButtonAction(ActionEvent event) throws SQLException {    
-        
-        
+        String selectedCategory = this.getCategory();
         String taskTitleText = this.getTaskTitle();
         String taskDescriptionText = this.getTaskDescription();
         String doDateText = this.getDoDate();
         String dueDateText = this.getDueDate();
         String priorityText = this.getPriority();
         
-        Task task = new Task(taskTitleText, taskDescriptionText, doDateText, dueDateText,priorityText);
-        
-        d.insertTasks(task);
+        //Entries entry = new Entries(startText, endText, descriptionText, selectedCategory);
+        //Task task = new Task(taskTitleText, taskDescriptionText, doDateText, dueDateText,priorityText);
+
+        //Database.insertEntries(entry);
+        //Database.insertTasks(task);
         
         try {
 
@@ -129,25 +96,15 @@ public class EntriesController {
         }
 
     }
-    
-    
-    
     @FXML
     private void handleBackButtonAction(ActionEvent event) throws IOException{
         pageSwitcher.switcher(event, "Dashboard.fxml");
-        
     }
 
     @FXML
     public void initialize() {
         //TODO: What should the screen look like when it loads?
-        ObservableList<String> categoryList = FXCollections.observableArrayList();
-        
-        categoryList.add("Study");
-        categoryList.add("Work");
-        categoryList.add("Eating");
-        
-        category.setItems(categoryList);
+
     }
 
     public String getStartTime() {
@@ -206,6 +163,14 @@ public class EntriesController {
         this.dueDate = dueDate;
     }
 
+    public String getCategory() {
+        return category.getAccessibleText();
+    }
+
+    public void setCategory(ComboBox<?> category) {
+        this.category = category;
+    }
+
     public String getPriority() {
         return priority.getText();
     }
@@ -215,11 +180,11 @@ public class EntriesController {
     }
 
     public Button getConfirm() {
-        return confirmButton;
+        return confirm;
     }
 
     public void setConfirm(Button confirm) {
-        this.confirmButton = confirm;
+        this.confirm = confirm;
     }
 
 }

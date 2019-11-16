@@ -14,7 +14,7 @@
       <AnchorPane layoutX="-15.0" layoutY="-2.0" prefHeight="546.0" prefWidth="230.0" style="-fx-background-color: #ace5ee;" />
       <AnchorPane layoutX="-8.0" layoutY="1.0" prefHeight="80.0" prefWidth="925.0" style="-fx-background-color: #1ca9c9;">
          <children>
-            <Button fx:id="LogEntryButton" layoutX="644.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleLogEntryButtonAction" prefHeight="59.0" prefWidth="251.0" style="-fx-background-color: #1ca9c9;" text="Log Entry/Create Task" textFill="WHITE">
+            <Button fx:id="LogEntryButton" layoutX="720.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleLogEntryButtonAction" prefHeight="59.0" prefWidth="175.0" style="-fx-background-color: #1ca9c9;" text="Log Entry" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
