@@ -89,12 +89,7 @@ public class EntriesController {
         d.insertEntries(entry);
         //Database.insertTasks(task);
         
-        try {
-
-            pageSwitcher.switcher(event, "KanbanBoard.fxml");
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+        
     }
     
     
@@ -111,6 +106,13 @@ public class EntriesController {
         Task task = new Task(taskTitleText, taskDescriptionText, doDateText, dueDateText,priorityText);
         
         d.insertTasks(task);
+        
+        try {
+
+            pageSwitcher.switcher(event, "KanbanBoard.fxml");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
     }
     
