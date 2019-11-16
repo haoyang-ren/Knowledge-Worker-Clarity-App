@@ -170,15 +170,41 @@ public class Database {
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Do Assignment','Information systems homework','2019-11-18 23:21', '2019-11-17 23:25', '1');");
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Prepare for interview','Summer internship','2019-11-19 18:21', '2019-11-20 18:21', '1');");
         
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('WORKED HARD', 'TRY HARDER', '2019-11-15 20:00');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Work harder', '2019-11-13 ');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Ate healthy', 'Eat healthier', '2019-11-13 ');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-11-10 ');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Relax more', '2019-11-10 ');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-11-10 ');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Sleep earlier', '2019-11-09 ');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Revised alot', 'Sleep earlier', '2019-11-10 ');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Relax more', '2019-11-10 ');");
+        //DAILY LEARNINGS DUMMY DATA
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Ate healthy', 'Do more exercise', '2019-10-16 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-10-17 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Relax more', '2019-10-18 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-10-19 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'So more exercise', '2019-10-20 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Revised alot', 'Sleep earlier', '2019-10-21 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Relax more', '2019-10-22 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Worked hard', 'Sleep earlier', '2019-10-23');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Work harder', '2019-10-24 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Ate healthy', 'Do more exercise', '2019-10-25 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-10-26 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Relax more', '2019-10-27 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-10-28 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'So more exercise', '2019-10-29 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Revised alot', 'Sleep earlier', '2019-10-30 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Relax more', '2019-10-31 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Worked hard', 'Sleep earlier', '2019-11-01');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Work harder', '2019-11-02 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Ate healthy', 'Do more exercise', '2019-11-03 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-11-04 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Relax more', '2019-11-05 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-11-06 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'So more exercise', '2019-11-07 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Revised alot', 'Sleep earlier', '2019-11-08 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Relax more', '2019-11-09 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Worked hard', 'Sleep earlier', '2019-11-10');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'Work harder', '2019-11-11 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Ate healthy', 'Do more exercise', '2019-11-12 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-11-13 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Relax more', '2019-11-14 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-11-15 ');");
+        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'So more exercise', '2019-11-16 ');");
+ 
+        
         
         s.close();
        // conn.close();
