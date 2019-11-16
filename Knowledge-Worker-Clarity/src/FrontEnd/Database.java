@@ -108,15 +108,60 @@ public class Database {
         openConnection();
 
         Statement s = conn.createStatement();
-
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 20:21','5.0', 'Notes', 'Study');");
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2014-10-23 15:21:07','2014-10-23 22:21','20.0', 'Notes', 'Study');");
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-12 10:21','2019-11-12 10:21','7.0', 'Notes', 'Study');");
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-13 10:21','2019-11-12:10:07','100.0', 'Notes', 'Work');");
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-07 10:21','2019-11-07 22:21','20.0', 'Notes', 'Study');");
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-08 10:21','2019-11-07 22:21','70.0', 'Notes', 'Relax');");
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-07 10:21','2019-11-07 22:21','50.0', 'Notes', 'Social');");
-        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-08 10:21','2019-11-07 22:21','20.0', 'Notes', 'Work');");
+        
+        //DUMMY DATA FOR DAILY CHART
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-14 10:21:07','2019-11-23 20:21','5.0', 'INFS2605', 'Study');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-14 10:21:07','2019-11-23 22:21','3.0', 'Accounting', 'Work');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-14 10:21','2019-11-16 15:21','2.0', 'Notes', 'Exercise');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-14 10:21','2019-11-16 18:07','8.0', 'Went to a party', 'Social');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-14 10:21','2019-11-17 17:21','8.0', 'Slept', 'Relax');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-15 10:21:07','2019-11-23 20:21','5.0', 'INFS2605', 'Study');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-15 10:21:07','2019-11-23 22:21','3.0', 'Accounting', 'Work');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-15 10:21','2019-11-16 15:21','2.0', 'Notes', 'Exercise');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-15 10:21','2019-11-16 18:07','8.0', 'Went to a party', 'Social');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-15 10:21','2019-11-17 17:21','8.0', 'Slept', 'Relax');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-16 10:21:07','2019-11-23 20:21','5.0', 'INFS2605', 'Study');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-16 10:21:07','2019-11-23 22:21','3.0', 'Accounting', 'Work');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-16 10:21','2019-11-16 15:21','2.0', 'Notes', 'Exercise');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-16 10:21','2019-11-16 18:07','8.0', 'Went to a party', 'Social');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-16 10:21','2019-11-17 17:21','8.0', 'Slept', 'Relax');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-17 10:21:07','2019-11-23 20:21','5.0', 'INFS2605', 'Study');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-17 10:21:07','2019-11-23 22:21','3.0', 'Accounting', 'Work');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-17 10:21','2019-11-16 15:21','2.0', 'Notes', 'Exercise');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-17 10:21','2019-11-16 18:07','8.0', 'Went to a party', 'Social');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-17 10:21','2019-11-17 17:21','8.0', 'Slept', 'Relax');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-18 10:21:07','2019-11-23 20:21','5.0', 'INFS2605', 'Study');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-18 10:21:07','2019-11-23 22:21','3.0', 'Accounting', 'Work');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-18 10:21','2019-11-16 15:21','2.0', 'Notes', 'Exercise');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-18 10:21','2019-11-16 18:07','8.0', 'Went to a party', 'Social');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-18 10:21','2019-11-17 17:21','8.0', 'Slept', 'Relax');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-19 10:21:07','2019-11-23 20:21','5.0', 'INFS2605', 'Study');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-19 10:21:07','2019-11-23 22:21','3.0', 'Accounting', 'Work');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-19 10:21','2019-11-16 15:21','2.0', 'Notes', 'Exercise');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-19 10:21','2019-11-16 18:07','8.0', 'Went to a party', 'Social');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-19 10:21','2019-11-17 17:21','8.0', 'Slept', 'Relax');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-20 10:21:07','2019-11-23 20:21','5.0', 'INFS2605', 'Study');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-20 10:21:07','2019-11-23 22:21','3.0', 'Accounting', 'Work');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-20 10:21','2019-11-16 15:21','2.0', 'Notes', 'Exercise');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-20 10:21','2019-11-16 18:07','8.0', 'Went to a party', 'Social');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-20 10:21','2019-11-17 17:21','8.0', 'Slept', 'Relax');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-21 10:21:07','2019-11-23 20:21','5.0', 'INFS2605', 'Study');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-21 10:21:07','2019-11-23 22:21','3.0', 'Accounting', 'Work');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-21 10:21','2019-11-16 15:21','2.0', 'Notes', 'Exercise');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-21 10:21','2019-11-16 18:07','8.0', 'Went to a party', 'Social');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-21 10:21','2019-11-17 17:21','8.0', 'Slept', 'Relax');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-22 10:21:07','2019-11-23 20:21','5.0', 'INFS2605', 'Study');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-22 10:21:07','2019-11-23 22:21','3.0', 'Accounting', 'Work');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-22 10:21','2019-11-16 15:21','2.0', 'Notes', 'Exercise');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-22 10:21','2019-11-16 18:07','8.0', 'Went to a party', 'Social');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-22 10:21','2019-11-17 17:21','8.0', 'Slept', 'Relax');");
+       //For weekly breakdown
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-15 10:21','2019-11-17 17:21','20.0', 'Slept', 'Work');");
+        s.execute("INSERT OR IGNORE INTO Entries(STARTTIME, ENDTIME, DURATION, DESCRIPTION, CATEGORY) VALUES ('2019-11-15 10:21','2019-11-17 17:21','25.0', 'Slept', 'Exercise');");
+        
+        
+        
+        
         
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Procrastinating','Watching cat videos','2014-10-23 15:21', '2014-10-23 22:21', '1');");
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('DO assignment','Watching cat videos','2019-11-13 15:21', '2019-11-15 22:21', '1');");
@@ -154,11 +199,12 @@ public class Database {
 
         st.setString(1, entry.getStart());
         st.setString(2, entry.getEnd());
-        st.setString(3, "20");
+        st.setString(3, entry.getDuration());
         st.setString(4, entry.getDescription());
         st.setString(5, entry.getCategory());
 
-        st.execute(myPreparedSt);
+        st.execute();
+        st.close();
 
     }
 
@@ -176,12 +222,13 @@ public class Database {
         st.setString(3, task.getDoDate());
         st.setString(4, task.getDueDate());
         st.setString(5, task.getPriority());
-        st.execute(myPreparedSt);
+        st.execute();
+        st.close();
 
     }
     public void insertLearning(String doneWell, String doBetter) throws SQLException{
         
-        openConnection();
+       openConnection();
         
        // Statement s = conn.createStatement();
        LocalDate today = LocalDate.now(); 
