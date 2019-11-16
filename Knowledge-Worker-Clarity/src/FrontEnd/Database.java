@@ -171,9 +171,6 @@ public class Database {
         s.execute("INSERT OR REPLACE INTO Tasks(TASKTITLE, TASKDESCRIPTION, TASKDODATE, TASKDUEDATE, TASKPRIORITY) VALUES ('Prepare for interview','Summer internship','2019-11-19 18:21', '2019-11-20 18:21', '1');");
         
         //DAILY LEARNINGS DUMMY DATA
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Ate healthy', 'Do more exercise', '2019-10-16 ');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-10-17 ');");
-        s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Relax more', '2019-10-18 ');");
         s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Studied hard', 'Sleep earlier', '2019-10-19 ');");
         s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Slept well', 'So more exercise', '2019-10-20 ');");
         s.execute("INSERT OR IGNORE INTO DailyLearnings(DONEWELL, DOBETTER, DATE) VALUES ('Revised alot', 'Sleep earlier', '2019-10-21 ');");
