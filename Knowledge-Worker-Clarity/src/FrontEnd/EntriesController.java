@@ -145,7 +145,9 @@ public class EntriesController {
         
         categoryList.add("Study");
         categoryList.add("Work");
-        categoryList.add("Eating");
+        categoryList.add("Social");
+        categoryList.add("Relax");
+        categoryList.add("Exercise");
         
         category.setItems(categoryList);
     }
