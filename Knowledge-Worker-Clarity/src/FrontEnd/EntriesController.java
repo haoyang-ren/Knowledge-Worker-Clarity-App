@@ -84,7 +84,7 @@ public class EntriesController {
        
         
         Entries entry = new Entries(startText, endText, descriptionText, categoryText);
-        //Task task = new Task(taskTitleText, taskDescriptionText, doDateText, dueDateText,priorityText);
+        
 
         d.insertEntries(entry);
         //Database.insertTasks(task);
@@ -108,9 +108,9 @@ public class EntriesController {
         String dueDateText = this.getDueDate();
         String priorityText = this.getPriority();
         
+        Task task = new Task(taskTitleText, taskDescriptionText, doDateText, dueDateText,priorityText);
         
-        
-        
+        d.insertTasks(task);
 
     }
     

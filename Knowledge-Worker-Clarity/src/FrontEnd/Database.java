@@ -159,6 +159,7 @@ public class Database {
         st.setString(5, entry.getCategory());
 
         st.execute();
+        st.close();
 
     }
 
@@ -176,7 +177,8 @@ public class Database {
         st.setString(3, task.getDoDate());
         st.setString(4, task.getDueDate());
         st.setString(5, task.getPriority());
-        st.execute(myPreparedSt);
+        st.execute();
+        st.close();
 
     }
     public void insertLearning(String doneWell, String doBetter) throws SQLException{
