@@ -154,7 +154,7 @@ public class Database {
 
         st.setString(1, entry.getStart());
         st.setString(2, entry.getEnd());
-        st.setString(3, "20.0");
+        st.setString(3, entry.getDuration());
         st.setString(4, entry.getDescription());
         st.setString(5, entry.getCategory());
 

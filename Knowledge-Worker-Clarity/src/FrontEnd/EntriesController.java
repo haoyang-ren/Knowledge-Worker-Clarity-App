@@ -10,6 +10,9 @@ import BackEnd.Task;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -82,9 +85,20 @@ public class EntriesController {
         String descriptionText = this.getDescription();
         String categoryText = category.getValue();
        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        LocalDateTime startTime = LocalDateTime.parse(startText, formatter);
+        LocalDateTime endTime = LocalDateTime.parse(endText, formatter);
+       
+        Duration period = Duration.between(startTime, endTime);
+        long diff = period.toHours();
+        Long l = new Long(diff);
+        double dub = l.doubleValue();
+        String duration = String.valueOf(dub);
+       
         
-        Entries entry = new Entries(startText, endText, descriptionText, categoryText);
         
+        Entries entry = new Entries(startText, endText, descriptionText, categoryText, duration);
+        System.out.println(entry.getDuration());
 
         d.insertEntries(entry);
         //Database.insertTasks(task);
