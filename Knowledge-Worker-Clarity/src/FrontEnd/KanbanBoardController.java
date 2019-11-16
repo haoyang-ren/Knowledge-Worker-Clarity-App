@@ -13,6 +13,7 @@ import java.time.format.DateTimeFormatter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -23,16 +24,17 @@ import javafx.scene.control.TextField;
 public class KanbanBoardController {
 
     @FXML
-    private TextField compeletedTask;
+    private TextArea compeletedTask;
 
     @FXML
-    private TextField tomorrowTask;
+    private TextArea tomorrowTask;
 
     @FXML
-    private TextField todayTask;
+    private TextArea weekTask;
 
     @FXML
-    private TextField weekTask;
+    private TextArea todayTask;
+
 
     @FXML
     private Button previous;
@@ -66,7 +68,7 @@ public class KanbanBoardController {
         StringBuilder todayTaskString = new StringBuilder();
         StringBuilder tomorrowTaskString = new StringBuilder();
         StringBuilder weekTaskString = new StringBuilder();
-
+       
         try {
             ZoneId zone = ZoneId.systemDefault();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
@@ -83,19 +85,19 @@ public class KanbanBoardController {
                 LocalDateTime currentTime = LocalDateTime.now(zone);
                 KanbanBoard kanban = new KanbanBoard(currentTime, taskDoDate, taskDueDate);
                 if (kanban.checkCompleted(currentTime, taskDoDate, taskDueDate) == true) {
-                    //compeletedTask.setText(taskTitle + " : " + taskDescription);
+                    
                     compeletedTaskString.append(taskTitle).append(" : ").append(taskDescription).append("\n");
                 }
                 if (kanban.checkToday(currentTime, taskDoDate, taskDueDate) == true) {
-                    //todayTask.setText(taskTitle + " : " + taskDescription);
+                   
                     todayTaskString.append(taskTitle).append(" : ").append(taskDescription).append("\n");
                 }
                 if (kanban.checkTomorrow(currentTime, taskDoDate, taskDueDate) == true) {
-                    //tomorrowTask.setText(taskTitle + " : " + taskDescription);
+                    
                     tomorrowTaskString.append(taskTitle).append(" : ").append(taskDescription).append("\n");
                 }
                 if (kanban.checkWeek(currentTime, taskDoDate, taskDueDate) == true) {
-                    //weekTask.setText(taskTitle + " : " + taskDescription);
+                    
                     weekTaskString.append(taskTitle).append(" : ").append(taskDescription).append("\n");
                 }
 
