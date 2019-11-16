@@ -43,12 +43,14 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="back" layoutX="29.0" layoutY="23.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #ace5ee;" />
-            <ImageView fitHeight="40.0" fitWidth="39.0" layoutX="48.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/Back%20Button.png" />
-               </image>
-            </ImageView>
+            <Button fx:id="back" layoutX="22.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #ace5ee;">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Back%20Button.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="79.0" prefWidth="611.0" style="-fx-background-color: #1ca9c9;">
