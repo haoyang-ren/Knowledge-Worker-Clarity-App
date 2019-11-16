@@ -10,6 +10,8 @@ import BackEnd.Task;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -45,13 +47,16 @@ public class EntriesController {
     private TextField dueDate;
 
     @FXML
-    private ComboBox<?> category;
+    private ComboBox<String> category;
 
     @FXML
     private TextField priority;
 
     @FXML
-    private Button confirm;
+    private Button confirmButton;
+    
+    @FXML
+    private Button confirmTaskButton;
 
     Database d = new Database();
     //TODO: Instatiate the PageSwitchHelper class
@@ -70,22 +75,18 @@ public class EntriesController {
     }*/
 
     @FXML
-    private void handleButtonAction(ActionEvent event) throws SQLException {
+    private void handleConfirmButtonAction(ActionEvent event) throws SQLException {
         
         String startText = this.getStartTime();
         String endText = this.getEndTime();
         String descriptionText = this.getDescription();
-        String selectedCategory = this.getCategory();
-        String taskTitleText = this.getTaskTitle();
-        String taskDescriptionText = this.getTaskDescription();
-        String doDateText = this.getDoDate();
-        String dueDateText = this.getDueDate();
-        String priorityText = this.getPriority();
+        String categoryText = category.getValue();
+       
         
-        //Entries entry = new Entries(startText, endText, descriptionText, selectedCategory);
+        Entries entry = new Entries(startText, endText, descriptionText, categoryText);
         //Task task = new Task(taskTitleText, taskDescriptionText, doDateText, dueDateText,priorityText);
 
-        //Database.insertEntries(entry);
+        d.insertEntries(entry);
         //Database.insertTasks(task);
         
         try {
@@ -94,8 +95,27 @@ public class EntriesController {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+    
+    
+    @FXML
+    private void handleConfirmTaskButtonAction(ActionEvent event) throws SQLException {    
+        
+        
+        String taskTitleText = this.getTaskTitle();
+        String taskDescriptionText = this.getTaskDescription();
+        String doDateText = this.getDoDate();
+        String dueDateText = this.getDueDate();
+        String priorityText = this.getPriority();
+        
+        
+        
+        
 
     }
+    
+    
+    
     @FXML
     private void handleBackButtonAction(ActionEvent event) throws IOException{
         pageSwitcher.switcher(event, "Dashboard.fxml");
@@ -104,7 +124,13 @@ public class EntriesController {
     @FXML
     public void initialize() {
         //TODO: What should the screen look like when it loads?
-
+        ObservableList<String> categoryList = FXCollections.observableArrayList();
+        
+        categoryList.add("Study");
+        categoryList.add("Work");
+        categoryList.add("Eating");
+        
+        category.setItems(categoryList);
     }
 
     public String getStartTime() {
@@ -163,14 +189,6 @@ public class EntriesController {
         this.dueDate = dueDate;
     }
 
-    public String getCategory() {
-        return category.getAccessibleText();
-    }
-
-    public void setCategory(ComboBox<?> category) {
-        this.category = category;
-    }
-
     public String getPriority() {
         return priority.getText();
     }
@@ -180,11 +198,11 @@ public class EntriesController {
     }
 
     public Button getConfirm() {
-        return confirm;
+        return confirmButton;
     }
 
     public void setConfirm(Button confirm) {
-        this.confirm = confirm;
+        this.confirmButton = confirm;
     }
 
 }

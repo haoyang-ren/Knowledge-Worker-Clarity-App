@@ -154,11 +154,11 @@ public class Database {
 
         st.setString(1, entry.getStart());
         st.setString(2, entry.getEnd());
-        st.setString(3, "20");
+        st.setString(3, "20.0");
         st.setString(4, entry.getDescription());
         st.setString(5, entry.getCategory());
 
-        st.execute(myPreparedSt);
+        st.execute();
 
     }
 
@@ -181,7 +181,7 @@ public class Database {
     }
     public void insertLearning(String doneWell, String doBetter) throws SQLException{
         
-        openConnection();
+       openConnection();
         
        // Statement s = conn.createStatement();
        LocalDate today = LocalDate.now(); 

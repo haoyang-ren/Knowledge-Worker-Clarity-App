@@ -24,14 +24,15 @@
       <Text layoutX="35.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
       <Text layoutX="41.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category" />
       <Text layoutX="333.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Title" />
-      <Text layoutX="312.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Description" />
+      <Text layoutX="289.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Description" />
       <Text layoutX="334.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do-Date" />
       <Text layoutX="331.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Due-Date" />
       <ComboBox fx:id="category" layoutX="112.0" layoutY="301.0" prefWidth="150.0" />
       <TextField fx:id="priority" layoutX="408.0" layoutY="370.0" />
       <Text layoutX="346.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Priority" />
-      <Text layoutX="240.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create  your  own task" />
-      <Button fx:id="confirm" layoutX="273.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Confirm" />
-      <Button fx:id="back" layoutX="484.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Back" />
+      <Text layoutX="190.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log your entry or create a task!" />
+      <Button fx:id="confirmButton" layoutX="154.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleConfirmButtonAction" text="Confirm" />
+      <Button fx:id="back" layoutX="24.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Back" />
+      <Button fx:id="confirmTaskButton" layoutX="447.0" layoutY="419.0" mnemonicParsing="false" onAction="#handleConfirmTaskButtonAction" text="Confirm" />
    </children>
 </AnchorPane>
