@@ -167,6 +167,19 @@ public class DashboardController implements Initializable {
             series2.getData().add(new XYChart.Data<>(category, hours));
         }
             WeeklyChart.getData().addAll(series2);
+            
+            
+            Node n = WeeklyChart.lookup(".data0.chart-bar");
+    n.setStyle("-fx-bar-fill: cyan");
+    n = WeeklyChart.lookup(".data1.chart-bar");
+    n.setStyle("-fx-bar-fill: #10e0e0");
+    n = WeeklyChart.lookup(".data2.chart-bar");
+    n.setStyle("-fx-bar-fill: green");
+    n = WeeklyChart.lookup(".data3.chart-bar");
+    n.setStyle("-fx-bar-fill: orange");
+            
+            
+            
         }catch(Exception e){
             
         }
