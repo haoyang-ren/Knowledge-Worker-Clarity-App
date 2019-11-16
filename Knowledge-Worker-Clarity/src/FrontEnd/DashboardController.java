@@ -142,6 +142,19 @@ public class DashboardController implements Initializable {
             series1.getData().add(new XYChart.Data<>(category, hours));
         }
         DailyChart.getData().addAll(series1);
+        
+        Node n = DailyChart.lookup(".data0.chart-bar");
+    n.setStyle("-fx-bar-fill: #02e04c");
+    n = DailyChart.lookup(".data1.chart-bar");
+    n.setStyle("-fx-bar-fill: #00f3ba");
+    n = DailyChart.lookup(".data2.chart-bar");
+    n.setStyle("-fx-bar-fill: #48ffff");
+    n = DailyChart.lookup(".data3.chart-bar");
+    n.setStyle("-fx-bar-fill: #00aaff");
+     n = DailyChart.lookup(".data4.chart-bar");
+    n.setStyle("-fx-bar-fill: #8402c4");
+        
+        
         }catch (Exception e){
         }
         
@@ -170,13 +183,15 @@ public class DashboardController implements Initializable {
             
             
             Node n = WeeklyChart.lookup(".data0.chart-bar");
-    n.setStyle("-fx-bar-fill: cyan");
+    n.setStyle("-fx-bar-fill: #02e04c");
     n = WeeklyChart.lookup(".data1.chart-bar");
-    n.setStyle("-fx-bar-fill: #10e0e0");
+    n.setStyle("-fx-bar-fill: #00f3ba");
     n = WeeklyChart.lookup(".data2.chart-bar");
-    n.setStyle("-fx-bar-fill: green");
+    n.setStyle("-fx-bar-fill: #48ffff");
     n = WeeklyChart.lookup(".data3.chart-bar");
-    n.setStyle("-fx-bar-fill: orange");
+    n.setStyle("-fx-bar-fill: #00aaff");
+     n = WeeklyChart.lookup(".data4.chart-bar");
+    n.setStyle("-fx-bar-fill: #8402c4");
             
             
             
@@ -210,7 +225,7 @@ public class DashboardController implements Initializable {
               
               PieChart.setData(pieChartData);
               
-              String[] pieColors = {"#8ee53f", "#2f7532", "#8e4585", "#1ca9c9", "#afeeee"};
+              String[] pieColors = {"#02e04c", "#00f3ba", "#48ffff", "#00aaff", "#8402c4"};
                 int i = 0;
                 for (PieChart.Data data : pieChartData) {
                 data.getNode().setStyle(
